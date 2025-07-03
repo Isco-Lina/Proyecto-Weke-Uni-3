@@ -233,9 +233,29 @@ button {
     float: left;
     background-image: url(../images/banner-bg.png);
     height: auto;
-    background-size: 100%;
+    background-size: cover;
     padding: 0px 0px 20px 0px;
 }
+
+/* .header_section {
+  margin: 0;
+  padding: 0;
+  background-image: url(../images/banner-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+}
+
+.header_main {
+  padding: 0;
+  margin: 0;
+  background-image: url(../images/header-bg.png);
+  background-size: cover;
+} */
+
+
 
 .bg-light {
     background-color: transparent !important;
@@ -343,6 +363,7 @@ button {
 }
 
 
+
 /* header section end */
 
 
@@ -444,9 +465,7 @@ button {
 
 }
 
-.col-md-4{
-    padding-top: 50px;
-}
+
 
 .btn_main a {
     width: 100%;
@@ -1021,3 +1040,214 @@ button {
 .copyright_text a:hover {
     color: #e27141;
 } */
+
+
+
+
+
+
+/* Featured Style */
+
+.featured-items {
+  margin-bottom: 70px;
+}
+
+.featured-item {
+  border-radius: 5px;
+  border: 1px solid #eee;
+  padding: 20px;
+  transition: all 0.5s;
+}
+
+.featured-item:hover {
+  opacity: 0.9;
+}
+
+.featured-item img {
+  width: 100%;
+}
+
+.featured-item h4 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1e1e1e;
+  margin-top: 15px;
+  transition: all 0.5s;
+}
+
+.featured-item:hover h4 {
+  color: #3a8bcd;
+}
+
+.featured-item h6 {
+  color: #3a8bcd;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 0px;
+}
+
+.featured-page {
+  margin-top: 130px;
+  margin-bottom: 40px;
+}
+
+.featured-page .section-heading {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.featured-page #filters {
+  margin-top: 15px;
+  text-align: right;
+}
+
+.featured .featured-item {
+  margin-bottom: 30px;
+  text-decoration: none;
+}
+
+.featured .featured-item h4 {
+  transition: all 0.5s;
+}
+
+.featured .featured-item:hover h4 {
+  color: #3a8bcd;
+}
+
+.page-navigation ul {
+	text-align: center;
+	border-top: 1px solid #eee;
+	padding: 30px  0px 0px 0px;
+	margin: 0px 0px 80px 0px;
+}
+.page-navigation ul li {
+	display: inline-block;
+}
+.page-navigation ul li a {
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	text-align: center;
+	line-height: 38px;
+	border: 1px solid #eee;
+	border-radius: 5px;
+	font-weight: 700;
+	color: #1e1e1e;
+	font-size: 15px;
+	text-decoration: none;
+	transition: all 0.5s;
+}
+.page-navigation ul li a:hover,
+.page-navigation ul li.current-page a {
+    background-color: #2b2278;
+	border-color: #2b2278;
+	color: #fff;
+}
+
+
+
+/* Featured Page Style */
+.featured-page {
+	margin-top: 130px;
+	margin-bottom: 40px;
+}
+.featured-page .section-heading {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.featured-page #filters {
+	margin-top: 15px;
+	text-align: right;
+}
+.featured .featured-item {
+	margin-bottom: 30px;
+	text-decoration: none;
+}
+.featured .featured-item h4 {
+	transition: all 0.5s;
+}
+.featured .featured-item:hover h4 {
+	color: #3a8bcd;
+}
+#filter button {
+	outline: none;
+}
+#filter .btn-primary.focus,
+.btn-primary:focus {
+	color: #3a8bcd!important;
+	box-shadow: none!important;
+}
+#filters .btn-primary {
+	color: #1e1e1e;
+	border: none;
+	font-size: 15px;
+	font-weight: 700;
+	background-color: transparent;
+}
+
+.filtros-productos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px 25px;
+  justify-content: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 20px;
+}
+
+.btn-filtro {
+  background-color: transparent;
+  border: none;
+  font-weight: 600;
+  font-size: 15px;
+  color: #2B2B2B; /* Texto base gris oscuro */
+  padding: 8px 12px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-filtro:hover {
+  color: #295F9E; /* Azul WEKE */
+  border-color: #295F9E;
+}
+
+.btn-filtro.active {
+  color: #295F9E;
+  border-color: #295F9E;
+}
+
+#filtros-productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* centra los botones */
+  gap: 15px;
+  margin-top: 20px;
+  padding: 10px 0;
+}
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+  .filtros-productos {
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .btn-filtro {
+    font-size: 14px;
+  }
+}
+
+
+
+/* Evita que el footer se suba cuando no hay productos visibles */
+.featured {
+  min-height: 300px; /* Ajusta según tu diseño */
+  position: relative;
+}
+
+

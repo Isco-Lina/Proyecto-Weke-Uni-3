@@ -33,6 +33,21 @@
    <link rel="stylesheet" href="css/owl.theme.default.min.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
       media="screen">
+
+
+   <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+   <script src="https://unpkg.com/desandro-matches-selector@2/matches-selector.js"></script>
+
+   <style>
+      .featured-page {
+         margin-top: 0 !important;
+      }
+
+      .header_section {
+         padding-bottom: 0 !important;
+      }
+   </style>
+
 </head>
 
 <body>
@@ -57,9 +72,9 @@
                      <li class="nav-item">
                         <a class="nav-link" href="services.html">Productos</a>
                      </li>
-                     <li class="nav-item">
+                     <!-- <li class="nav-item">
                         <a class="nav-link " href="blog.html">Equipo</a>
-                     </li>
+                     </li> -->
                      <li class="nav-item">
                         <a class="nav-link " href="contact.html">Contacto</a>
                      </li>
@@ -74,7 +89,7 @@
                   <li class="active"><a href="index.html">Inicio</a></li>
                   <li><a href="about.html">Nosotros</a></li>
                   <li><a href="services.html">Productos</a></li>
-                  <li><a href="blog.html">Equipo</a></li>
+                  <!-- <li><a href="blog.html">Equipo</a></li> -->
                   <li><a href="contact.html">Contacto</a></li>
                </ul>
             </div>
@@ -83,7 +98,220 @@
    </div>
    <!-- header section end -->
    <!-- services section start -->
-   <div class="services_section layout_padding">
+
+
+   <!-- Productos Destacados -->
+   <div class="featured-page">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-4 col-sm-12">
+               <div class="section-heading">
+                  <div class="line-dec"></div>
+                  <h1>Productos Destacados</h1>
+               </div>
+            </div>
+            <div class="col-md-8 col-sm-12">
+               <div id="filtros-productos">
+                  <button class="btn-filtro active" data-filter="*">Todos</button>
+                  <button class="btn-filtro" data-filter=".infantil">Línea Infantil</button>
+                  <button class="btn-filtro" data-filter=".primera">Primera Capa</button>
+                  <button class="btn-filtro" data-filter=".segunda">Segunda Capa</button>
+                  <button class="btn-filtro" data-filter=".tercera">Tercera Capa</button>
+                  <button class="btn-filtro" data-filter=".accesorios">Accesorios</button>
+                  <button class="btn-filtro" data-filter=".inclusivo">Inclusivo</button>
+               </div>
+
+
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="featured container no-gutter">
+      <div class="row posts">
+         <div class="item infantil col-md-4">
+            <a href="#">
+               <div class="featured-item">
+                  <img src="images/weke/productos/Línea Infantil/weke_ninos_azul.jpg"
+                     alt="Polera para niño azul - Tallas del 6 a 14">
+                  <h4>Polera para niño azul</h4>
+                  <h6 class="precio-producto">$29.990</h6>
+               </div>
+            </a>
+         </div>
+
+         <div class="item infantil col-md-4">
+            <a href="#">
+               <div class="featured-item">
+                  <img src="images/weke/productos/Línea Infantil/weke_ninos_azul.jpg"
+                     alt="Chaqueta para niño - Tallas del 6 a 18">
+                  <h4>Chaqueta para niño</h4>
+                  <h6 class="precio-producto">$29.990</h6>
+               </div>
+            </a>
+         </div>
+
+         <!-- ...continúa con el resto de los productos... -->
+
+         <div class="item accesorios col-md-4">
+            <a href="#">
+               <div class="featured-item">
+                  <img src="images/weke/productos/Accesorios/weke_banano_lahuen.jpg" alt="Mochila campamento huingan">
+                  <h4>Mochila campamento huingan</h4>
+                  <h6 class="precio-producto">$29.990</h6>
+               </div>
+            </a>
+         </div>
+
+         <div class="item accesorios col-md-4">
+            <a href="#">
+               <div class="featured-item">
+                  <img src="images/weke/productos/Accesorios/weke_banano_lahuen.jpg" alt="Mochila campamento huingan">
+                  <h4>Mochila campamento huingan</h4>
+                  <h6 class="precio-producto">$29.990</h6>
+               </div>
+            </a>
+         </div>
+
+         <div class="item accesorios col-md-4">
+            <a href="#">
+               <div class="featured-item">
+                  <img src="images/weke/productos/Accesorios/weke_banano_lahuen.jpg" alt="Mochila campamento huingan">
+                  <h4>Mochila campamento huingan</h4>
+                  <h6 class="precio-producto">$29.990</h6>
+               </div>
+            </a>
+         </div>
+
+         <div class="item accesorios col-md-4">
+            <a href="#">
+               <div class="featured-item">
+                  <img src="images/weke/productos/Accesorios/weke_banano_lahuen.jpg" alt="Mochila campamento huingan">
+                  <h4>Mochila campamento huingan</h4>
+                  <h6 class="precio-producto">$29.990</h6>
+               </div>
+            </a>
+         </div>
+
+         <div class="item accesorios col-md-4">
+            <a href="#">
+               <div class="featured-item">
+                  <img src="images/weke/productos/Accesorios/weke_banano_lahuen.jpg" alt="Mochila campamento huingan">
+                  <h4>Mochila campamento huingan</h4>
+                  <h6 class="precio-producto">$29.990</h6>
+               </div>
+            </a>
+         </div>
+
+         <div class="item accesorios col-md-4">
+            <a href="#">
+               <div class="featured-item">
+                  <img src="images/weke/productos/Accesorios/weke_banano_lahuen.jpg" alt="Mochila campamento huingan">
+                  <h4>Mochila campamento huingan</h4>
+                  <h6 class="precio-producto">$29.990</h6>
+               </div>
+            </a>
+         </div>
+
+         <div class="item accesorios col-md-4">
+            <a href="#">
+               <div class="featured-item">
+                  <img src="images/weke/productos/Accesorios/weke_banano_lahuen.jpg" alt="Mochila campamento huingan">
+                  <h4>Mochila campamento huingan</h4>
+                  <h6 class="precio-producto">$29.990</h6>
+               </div>
+            </a>
+         </div>
+
+         <div class="item accesorios col-md-4">
+            <a href="#">
+               <div class="featured-item">
+                  <img src="images/weke/productos/Accesorios/weke_banano_lahuen.jpg" alt="Mochila campamento huingan">
+                  <h4>Mochila campamento huingan</h4>
+                  <h6 class="precio-producto">$29.990</h6>
+               </div>
+            </a>
+         </div>
+
+         <div class="item accesorios col-md-4">
+            <a href="#">
+               <div class="featured-item">
+                  <img src="images/weke/productos/Accesorios/weke_banano_lahuen.jpg" alt="Mochila campamento huingan">
+                  <h4>Mochila campamento huingan</h4>
+                  <h6 class="precio-producto">$29.990</h6>
+               </div>
+            </a>
+         </div>
+
+         <div class="item accesorios col-md-4">
+            <a href="#">
+               <div class="featured-item">
+                  <img src="images/weke/productos/Accesorios/weke_banano_lahuen.jpg" alt="Mochila campamento huingan">
+                  <h4>Mochila campamento huingan</h4>
+                  <h6 class="precio-producto">$29.990</h6>
+               </div>
+            </a>
+         </div>
+
+         <div class="item accesorios col-md-4">
+            <a href="#">
+               <div class="featured-item">
+                  <img src="images/weke/productos/Accesorios/weke_banano_lahuen.jpg" alt="Mochila campamento huingan">
+                  <h4>Mochila campamento huingan</h4>
+                  <h6 class="precio-producto">$29.990</h6>
+               </div>
+            </a>
+         </div>
+
+         <div class="item accesorios col-md-4">
+            <a href="#">
+               <div class="featured-item">
+                  <img src="images/weke/productos/Accesorios/weke_banano_lahuen.jpg" alt="Mochila campamento huingan">
+                  <h4>Mochila campamento huingan</h4>
+                  <h6 class="precio-producto">$29.990</h6>
+               </div>
+            </a>
+         </div>
+
+         <div class="item accesorios col-md-4">
+            <a href="#">
+               <div class="featured-item">
+                  <img src="images/weke/productos/Accesorios/weke_banano_lahuen.jpg" alt="Mochila campamento huingan">
+                  <h4>Mochila campamento huingan</h4>
+                  <h6 class="precio-producto">$29.990</h6>
+               </div>
+            </a>
+         </div>
+
+         <div class="item accesorios col-md-4">
+            <a href="#">
+               <div class="featured-item">
+                  <img src="images/weke/productos/Accesorios/weke_banano_lahuen.jpg" alt="Mochila campamento huingan">
+                  <h4>Mochila campamento huingan</h4>
+                  <h6 class="precio-producto">$29.990</h6>
+               </div>
+            </a>
+         </div>
+      </div>
+   </div>
+
+   <!-- <div class="page-navigation">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+               <ul>
+                  <li class="current-page"><a href="#" aria-label="Página 1">1</a></li>
+                  <li><a href="#" aria-label="Página 2">2</a></li>
+                  <li><a href="#" aria-label="Siguiente página"><i class="fa fa-angle-right"></i></a></li>
+               </ul>
+
+            </div>
+         </div>
+      </div>
+   </div> -->
+
+
+   <!-- <div class="services_section layout_padding">
       <div class="container">
          <h1 class="services_taital">Nuestros Productos </h1>
          <p class="services_text">Explora nuestra línea de ropa técnica para todas las condiciones del outdoor</p>
@@ -104,9 +332,37 @@
             </div>
          </div>
       </div>
-   </div>
+   </div> -->
    <!-- services section end -->
    <!-- footer section start -->
+   <!-- <div class="footer_section layout_padding">
+      <div class="container">
+         <div class="input_btn_main">
+            <input type="text" class="mail_text" placeholder="Enter your email" name="Enter your email">
+            <div class="subscribe_bt"><a href="#">Subscribe</a></div>
+         </div> 
+         <div class="location_main">
+            <div class="call_text"><img src="images/weke/contacto/whatsapp.png"></div>
+            <div class="call_text"><a href="https://wa.me/56998785258" target="_blank">+569 98785258</a></div>
+            <div class="call_text"><img src="images//weke/contacto/gmail.png"></div>
+            <div class="call_text"> <a href="mailto:contacto@wekeoutdoor.cl,vidalina.diaz@wekeoutdoor.cl"
+                  target="_blank">contacto@wekeoutdoor.cl</div>
+         </div>
+         <div class="social_icon">
+            <ul>
+               <li><a href="https://www.facebook.com/WekeChile" target="_blank"><img
+                        src="images/weke/contacto/facebook.png"></a></li>
+               <li><a href="https://www.instagram.com/weke_outdoor/" target="_blank"><img
+                        src="images/weke/contacto/instagram.png"></a>
+               </li>
+               <li><a href="https://cl.pinterest.com/wekeoutdoor/" target="_blank"><img
+                        src="images/weke/contacto/pinterest.png"></a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>-->
+
    <div class="footer_section layout_padding">
       <div class="container">
          <!-- <div class="input_btn_main">
@@ -135,10 +391,13 @@
       </div>
    </div>
    <!-- footer section end -->
+
+   <!-- footer section end -->
    <!-- copyright section start -->
    <div class="copyright_section">
       <div class="container">
-         <p class="copyright_text">&copy; 2025 WEKE. Ropa técnica hecha en Chile. Todos los derechos reservados</p>
+         <p class="copyright_text">&copy; 2025 WEKE. Ropa técnica hecha en Chile. Todos los derechos reservados
+         </p>
          <!-- </footer><a href="https://html.design">Free html
             Templates</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a></p> -->
       </div>
@@ -157,5 +416,33 @@
    <script src="js/owl.carousel.js"></script>
    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 </body>
+<script>
+   document.addEventListener("DOMContentLoaded", function () {
+      var grid = document.querySelector('.posts');
+      if (grid) {
+         var iso = new Isotope(grid, {
+            itemSelector: '.item',
+            layoutMode: 'fitRows'
+         });
+
+         // Corrección aquí: usar ID correcto
+         var filtersElem = document.querySelector('#filtros-productos');
+         filtersElem.addEventListener('click', function (event) {
+            if (event.target.tagName !== 'BUTTON') return;
+
+            // Activar botón actual
+            document.querySelectorAll('.btn-filtro').forEach(function (btn) {
+               btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Filtro
+            var filterValue = event.target.getAttribute('data-filter');
+            iso.arrange({ filter: filterValue });
+         });
+      }
+   });
+</script>
+
 
 </html>
