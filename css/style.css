@@ -927,6 +927,13 @@ button {
     background-repeat: no-repeat;
 }
 
+.footer_section .location_main img,
+.footer_section .social_icon img {
+   width: 60px;
+   height: 60px;
+}
+
+
 /* .input_btn_main {
     width: 50%;
     display: flex;
