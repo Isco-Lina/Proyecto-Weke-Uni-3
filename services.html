@@ -910,11 +910,12 @@
    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 
    <!-- Modal Producto -->
-   <div id="modalProducto" class="modal-producto">
+
+   <div id="modalProducto" class="custom-modal" style="display: none;">
       <div class="modal-contenido">
-         <button class="cerrar-modal" onclick="cerrarModal()">×</button>
-         <h4 id="modalTitulo">Título del producto</h4>
-         <p id="modalDescripcion">Descripción detallada del producto aquí.</p>
+         <button class="btn-cerrar" onclick="cerrarModal()">×</button>
+         <h2 id="modalTitulo">Título del producto</h2>
+         <p id="modalDescripcion">Descripción del producto</p>
       </div>
    </div>
 
@@ -949,14 +950,15 @@
 
 <script>
    function abrirModal(titulo, descripcion) {
-      document.getElementById("modalTitulo").textContent = titulo;
-      document.getElementById("modalDescripcion").textContent = descripcion;
+      document.getElementById("modalTitulo").innerText = titulo;
+      document.getElementById("modalDescripcion").innerText = descripcion;
       document.getElementById("modalProducto").style.display = "flex";
    }
 
    function cerrarModal() {
       document.getElementById("modalProducto").style.display = "none";
    }
+
 </script>
 
 
