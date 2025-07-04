@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
    <!-- basic -->
@@ -10,10 +10,11 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
    <!-- site metas -->
-   <title>About</title>
-   <meta name="keywords" content="">
-   <meta name="description" content="">
-   <meta name="author" content="">
+   <title>WEKE - Contacto | Ropa Técnica Outdoor</title>
+   <meta name="keywords" content="contacto, weke, ropa técnica, outdoor, chile">
+   <meta name="description"
+      content="Contacta con WEKE. Canales de venta y distribución para ropa técnica outdoor. Hecho en Chile con pasión por la montaña.">
+   <meta name="author" content="WEKE">
    <!-- bootstrap css -->
    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
    <!-- style css -->
@@ -24,8 +25,8 @@
    <link rel="icon" href="images/fevicon.png" type="image/gif" />
    <!-- Scrollbar Custom CSS -->
    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-   <!-- Tweaks for older IEs-->
-   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+   <!-- Font Awesome Modern -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
    <!-- fonts -->
    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Righteous&display=swap" rel="stylesheet">
    <!-- owl stylesheets -->
@@ -428,8 +429,8 @@
       }
 
       .social_icon li a img {
-         width: 20px;
-         height: 20px;
+         width: 40px;
+         height: 40px;
       }
 
       /* Animaciones de entrada */
@@ -465,6 +466,12 @@
          }
       }
 
+      /* footer section */
+
+      .footer_section.layout_padding {
+         padding: 10px;
+      }
+
       /* Responsive */
       @media (max-width: 768px) {
          .contact_container {
@@ -497,184 +504,6 @@
          }
       }
    </style>
-
-
-   <!-- <style>
-      .contact_section {
-         background-color: #0A3D62;
-         padding: 80px 0;
-         color: white;
-      }
-
-      .contact_taital {
-         text-align: center;
-         font-size: 2.5rem;
-         margin-bottom: 10px;
-         font-weight: bold;
-      }
-
-      .contact_subtitle {
-         text-align: center;
-         color: #ccc;
-         margin-bottom: 40px;
-         font-size: 1.1rem;
-      }
-
-      .contact_container {
-         display: grid;
-         grid-template-columns: 1fr 1fr;
-         gap: 40px;
-         max-width: 1200px;
-         margin: 0 auto;
-      }
-
-      .contact_info,
-      .contact_form {
-         background-color: rgba(255, 255, 255, 0.05);
-         border-radius: 15px;
-         padding: 30px;
-         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-         backdrop-filter: blur(10px);
-      }
-
-      .form_title {
-         text-align: center;
-         font-size: 1.8rem;
-         margin-bottom: 25px;
-         font-weight: 600;
-         color: #ffffff;
-      }
-
-      .info_item {
-         display: flex;
-         align-items: center;
-         margin-bottom: 20px;
-         background-color: rgba(255, 255, 255, 0.08);
-         padding: 15px;
-         border-radius: 10px;
-         transition: transform 0.3s ease;
-      }
-
-      .info_item:hover {
-         transform: translateY(-3px);
-         background-color: rgba(255, 255, 255, 0.12);
-      }
-
-      .info_icon {
-         width: 45px;
-         height: 45px;
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         border-radius: 50%;
-         background-color: #3498db;
-         color: white;
-         margin-right: 15px;
-         font-size: 1.3rem;
-      }
-
-      .info_details h3 {
-         margin: 0;
-         font-size: 1.1rem;
-         color: white;
-      }
-
-      .info_details p,
-      .info_details a {
-         margin: 0;
-         color: #ddd;
-         font-size: 0.95rem;
-         text-decoration: none;
-      }
-
-      .email-bt,
-      .massage-bt,
-      .email-bt:focus,
-      .massage-bt:focus {
-         width: 100%;
-         padding: 12px 16px;
-         border: none;
-         border-radius: 8px;
-         background-color: rgba(255, 255, 255, 0.08);
-         color: white;
-         font-size: 1rem;
-         outline: none;
-         transition: background 0.3s ease;
-         border: 1px solid rgba(255, 255, 255, 0.15);
-      }
-
-      .email-bt::placeholder,
-      .massage-bt::placeholder {
-         color: #bbb;
-      }
-
-      .form-group {
-         margin-bottom: 20px;
-      }
-
-      .btn-primary {
-         background: linear-gradient(135deg, #3498db, #2980b9);
-         border: none;
-         padding: 12px 30px;
-         border-radius: 30px;
-         color: white;
-         font-weight: bold;
-         transition: all 0.3s ease;
-         cursor: pointer;
-         box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
-      }
-
-      .btn-primary:hover {
-         transform: translateY(-2px);
-         background: linear-gradient(135deg, #2980b9, #3498db);
-      }
-
-      .map_wrapper iframe {
-         width: 100%;
-         height: 250px;
-         border-radius: 10px;
-         border: 0;
-      }
-
-      .map_info {
-         display: flex;
-         justify-content: space-between;
-         flex-wrap: wrap;
-         color: #ccc;
-         font-size: 0.9rem;
-         margin-top: 15px;
-      }
-
-      .map_info p i {
-         color: #f39c12;
-         margin-right: 5px;
-      }
-
-      @media (max-width: 768px) {
-         .contact_container {
-            grid-template-columns: 1fr;
-            padding: 0 20px;
-         }
-
-         .form_title {
-            font-size: 1.5rem;
-         }
-
-         .contact_taital {
-            font-size: 2rem;
-         }
-
-         .info_item {
-            flex-direction: column;
-            align-items: flex-start;
-         }
-
-         .info_icon {
-            margin-bottom: 10px;
-         }
-      }
-   </style> -->
-
 </head>
 
 <body>
@@ -845,138 +674,155 @@
          </div>
       </div>
    </div>
+   <!-- contact section end -->
+
+   <!-- footer section start -->
+   <div class="footer_section layout_padding">
+      <div class="container">
+         <div class="social_icon">
+            <ul>
+               <li><a href="https://www.facebook.com/WekeChile" target="_blank"><img
+                        src="images/weke/contacto/facebook.png"></a></li>
+               <li><a href="https://www.instagram.com/weke_outdoor/" target="_blank"><img
+                        src="images/weke/contacto/instagram.png"></a>
+               </li>
+               <li><a href="https://cl.pinterest.com/wekeoutdoor/" target="_blank"><img
+                        src="images/weke/contacto/pinterest.png"></a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+   <!-- footer section end -->
 
    <!-- copyright section start -->
    <div class="copyright_section">
       <div class="container">
          <p class="copyright_text">&copy; 2025 WEKE. Ropa técnica hecha en Chile. Todos los derechos reservados</p>
-         <!-- </footer><a href="https://html.design">Free html
-            Templates</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a></p> -->
       </div>
    </div>
    <!-- copyright section end -->
+
    <!-- Javascript files-->
    <script src="js/jquery.min.js"></script>
    <script src="js/popper.min.js"></script>
    <script src="js/bootstrap.bundle.min.js"></script>
    <script src="js/jquery-3.0.0.min.js"></script>
    <script src="js/plugin.js"></script>
-   <!-- sidebar -->
    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
    <script src="js/custom.js"></script>
-   <!-- javascript -->
    <script src="js/owl.carousel.js"></script>
-   <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-</body>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 
-<!-- Script para funcionalidad del formulario -->
-<script>
-   document.addEventListener('DOMContentLoaded', function () {
-      // Configurar validación en español
-      const form = document.getElementById('formContacto');
+   <!-- Script para funcionalidad del formulario -->
+   <script>
+      document.addEventListener('DOMContentLoaded', function () {
+         // Configurar validación en español
+         const form = document.getElementById('formContacto');
 
-      // Función para personalizar mensajes de validación
-      function setCustomValidationMessages() {
-         const inputs = form.querySelectorAll('input, textarea, select');
+         // Función para personalizar mensajes de validación
+         function setCustomValidationMessages() {
+            const inputs = form.querySelectorAll('input, textarea, select');
 
-         inputs.forEach(input => {
-            input.addEventListener('invalid', function (e) {
-               const field = e.target;
+            inputs.forEach(input => {
+               input.addEventListener('invalid', function (e) {
+                  const field = e.target;
 
-               // Limpiar mensaje anterior
-               field.setCustomValidity('');
+                  // Limpiar mensaje anterior
+                  field.setCustomValidity('');
 
-               // Verificar tipo de error y establecer mensaje en español
-               if (field.validity.valueMissing) {
-                  if (field.type === 'email') {
-                     field.setCustomValidity('Completa este campo obligatorio');
-                  } else if (field.tagName === 'SELECT') {
-                     field.setCustomValidity('Selecciona una opción');
-                  } else {
-                     field.setCustomValidity('Completa este campo obligatorio');
+                  // Verificar tipo de error y establecer mensaje en español
+                  if (field.validity.valueMissing) {
+                     if (field.type === 'email') {
+                        field.setCustomValidity('Completa este campo obligatorio');
+                     } else if (field.tagName === 'SELECT') {
+                        field.setCustomValidity('Selecciona una opción');
+                     } else {
+                        field.setCustomValidity('Completa este campo obligatorio');
+                     }
+                  } else if (field.validity.typeMismatch) {
+                     if (field.type === 'email') {
+                        field.setCustomValidity('Ingresa un email válido');
+                     } else if (field.type === 'tel') {
+                        field.setCustomValidity('Ingresa un número de teléfono válido');
+                     }
+                  } else if (field.validity.tooShort) {
+                     field.setCustomValidity('El texto es demasiado corto');
+                  } else if (field.validity.patternMismatch) {
+                     field.setCustomValidity('El formato no es válido');
                   }
-               } else if (field.validity.typeMismatch) {
-                  if (field.type === 'email') {
-                     field.setCustomValidity('Ingresa un email válido');
-                  } else if (field.type === 'tel') {
-                     field.setCustomValidity('Ingresa un número de teléfono válido');
+               });
+
+               // Limpiar mensaje cuando el campo se vuelve válido
+               input.addEventListener('input', function () {
+                  if (this.validity.valid) {
+                     this.setCustomValidity('');
                   }
-               } else if (field.validity.tooShort) {
-                  field.setCustomValidity('El texto es demasiado corto');
-               } else if (field.validity.patternMismatch) {
-                  field.setCustomValidity('El formato no es válido');
-               }
+               });
             });
-
-            // Limpiar mensaje cuando el campo se vuelve válido
-            input.addEventListener('input', function () {
-               if (this.validity.valid) {
-                  this.setCustomValidity('');
-               }
-            });
-         });
-      }
-
-      // Inicializar validación personalizada
-      setCustomValidationMessages();
-
-      // Función para mostrar/ocultar el mapa
-      window.toggleMap = function () {
-         const mapContainer = document.getElementById('mapContainer');
-         const toggleBtn = document.querySelector('.map_toggle_btn');
-
-         if (mapContainer.style.display === 'none') {
-            mapContainer.style.display = 'block';
-            toggleBtn.innerHTML = '<i class="fas fa-times"></i> Ocultar Mapa';
-         } else {
-            mapContainer.style.display = 'none';
-            toggleBtn.innerHTML = '<i class="fas fa-map"></i> Ver en Mapa';
-         }
-      };
-
-      // Manejo del formulario
-      document.getElementById('formContacto').addEventListener('submit', function (e) {
-         // Validar campos antes de enviar
-         if (!this.checkValidity()) {
-            e.preventDefault();
-            this.reportValidity();
-            return;
          }
 
-         // El formulario se enviará automáticamente por mailto:
-         // No necesitamos preventDefault() aquí
+         // Inicializar validación personalizada
+         setCustomValidationMessages();
 
-         const submitBtn = this.querySelector('button[type="submit"]');
-         const originalText = submitBtn.innerHTML;
+         // Función para mostrar/ocultar el mapa
+         window.toggleMap = function () {
+            const mapContainer = document.getElementById('mapContainer');
+            const toggleBtn = document.querySelector('.map_toggle_btn');
 
-         // Mostrar feedback visual
-         submitBtn.innerHTML = '<i class="fas fa-check"></i> Abriendo cliente de correo...';
-         submitBtn.style.background = 'linear-gradient(135deg, #27ae60, #2ecc71)';
-
-         // Restaurar botón después de un momento
-         setTimeout(() => {
-            submitBtn.innerHTML = originalText;
-            submitBtn.style.background = 'linear-gradient(135deg, #3498db, #2980b9)';
-         }, 3000);
-      });
-
-      // Animación de entrada para elementos
-      const observer = new IntersectionObserver((entries) => {
-         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-               entry.target.style.opacity = '1';
-               entry.target.style.transform = 'translateY(0)';
+            if (mapContainer.style.display === 'none') {
+               mapContainer.style.display = 'block';
+               toggleBtn.innerHTML = '<i class="fas fa-times"></i> Ocultar Mapa';
+            } else {
+               mapContainer.style.display = 'none';
+               toggleBtn.innerHTML = '<i class="fas fa-map"></i> Ver en Mapa';
             }
+         };
+
+         // Manejo del formulario
+         document.getElementById('formContacto').addEventListener('submit', function (e) {
+            // Validar campos antes de enviar
+            if (!this.checkValidity()) {
+               e.preventDefault();
+               this.reportValidity();
+               return;
+            }
+
+            // El formulario se enviará automáticamente por mailto:
+            // No necesitamos preventDefault() aquí
+
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+
+            // Mostrar feedback visual
+            submitBtn.innerHTML = '<i class="fas fa-check"></i> Abriendo cliente de correo...';
+            submitBtn.style.background = 'linear-gradient(135deg, #27ae60, #2ecc71)';
+
+            // Restaurar botón después de un momento
+            setTimeout(() => {
+               submitBtn.innerHTML = originalText;
+               submitBtn.style.background = 'linear-gradient(135deg, #3498db, #2980b9)';
+            }, 3000);
+         });
+
+         // Animación de entrada para elementos
+         const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+               if (entry.isIntersecting) {
+                  entry.target.style.opacity = '1';
+                  entry.target.style.transform = 'translateY(0)';
+               }
+            });
+         });
+
+         document.querySelectorAll('.info_item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
          });
       });
-
-      document.querySelectorAll('.info_item').forEach(el => {
-         el.style.opacity = '0';
-         el.style.transform = 'translateY(20px)';
-         el.style.transition = 'all 0.6s ease';
-         observer.observe(el);
-      });
-   });
-</script>
+   </script>
+</body>
 
 </html>
