@@ -237,25 +237,6 @@ button {
     padding: 0px 0px 20px 0px;
 }
 
-/* .header_section {
-  margin: 0;
-  padding: 0;
-  background-image: url(../images/banner-bg.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  position: relative;
-  z-index: 1000;
-}
-
-.header_main {
-  padding: 0;
-  margin: 0;
-  background-image: url(../images/header-bg.png);
-  background-size: cover;
-} */
-
-
 
 .bg-light {
     background-color: transparent !important;
@@ -575,53 +556,6 @@ button {
     padding-top: 200px;
 }
 
-/* .blog_taital {
-    width: 100%;
-    float: left;
-    font-size: 40px;
-    color: #ffffff;
-    font-weight: bold;
-    padding-top: 30px;
-    text-align: center;
-}
-
-.blog_text {
-    width: 80%;
-    margin: 0 auto;
-    font-size: 16px;
-    color: #ffffff;
-    padding-top: 40px;
-    text-align: center;
-} */
-
-/* .play_icon_main {
-    width: 100%;
-    margin-top: 150px;
-    float: left;
-}
-
-.play_icon {
-    width: 200px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 5;
-} 
-
-.play_icon::before {
-    content: '';
-    position: absolute;
-    top: 49%;
-    left: 70px;
-    width: 130px;
-    height: 130px;
-    transform: translate(-50%, -50%);
-    background-color: #ffffff;
-    border-radius: 100%;
-    z-index: -1;
-    animation: fadeEffect 1.3s infinite ease;
-    box-shadow: 0px 0px 10px 0px;
-    right: inherit;
-}*/
 
 @keyframes fadeEffect {
     0% {
@@ -641,118 +575,6 @@ button {
 
 
 /* client section start */
-
-/* .client_section {
-    width: 100%;
-    float: left;
-    padding-bottom: 160px;
-}
-
-.client_taital {
-    width: 100%;
-    font-size: 40px;
-    color: #131313;
-    font-weight: bold;
-    padding-top: 30px;
-    text-align: center;
-}
-
-.client_section_2 {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    background-color: #ffffff;
-    box-shadow: 0px 1px 16px -6px;
-    border-radius: 30px;
-    padding: 50px 70px;
-    margin-top: 50px;
-}
-
-.client_main {
-    width: 100%;
-    display: flex;
-}
-
-.box_left {
-    width: 48%;
-}
-
-.box_right {
-    width: 48%;
-    float: right;
-    padding-top: 65px;
-    margin-left: 30px;
-}
-
-.lorem_text {
-    width: 100%;
-    font-size: 16px;
-    text-align: center;
-    margin: 0px;
-    color: #0d0d0d;
-    border: 1px solid #0d0d0d;
-    padding: 90px 30px;
-    border-radius: 30px;
-}
-
-.client_taital_left {
-    width: 40%;
-    float: left;
-}
-
-.client_taital_right {
-    width: 60%;
-    float: left;
-}
-
-.client_img {
-    width: 100%;
-    float: left;
-    text-align: left;
-}
-
-.quick_icon {
-    width: 100%;
-    float: left;
-    text-align: center;
-    padding-top: 30px;
-}
-
-.client_name {
-    width: 100%;
-    float: left;
-    font-size: 24px;
-    color: #012628;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-align: left;
-    padding-top: 53px;
-    padding-bottom: 0px;
-}
-
-.customer_text {
-    width: 100%;
-    float: left;
-    font-size: 16px;
-    color: #085a57;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-align: left;
-    margin: 0px;
-}
-
-.carousel-indicators li {
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    background-color: #8781bd;
-    bottom: -130px;
-}
-
-.carousel-indicators .active {
-    background-color: #2b2278;
-} */
-
 
 /* client section end */
 
@@ -934,48 +756,6 @@ button {
 }
 
 
-/* .input_btn_main {
-    width: 50%;
-    display: flex;
-    background-color: #ffffff;
-    border-radius: 40px;
-    padding: 8px 0px;
-    margin: 0 auto;
-}
-
-.mail_text {
-    width: 100%;
-    float: left;
-    font-size: 18px;
-    color: #2b2c2c;
-    background-color: #ffffff;
-    height: auto;
-    padding: 5px 20px;
-    border-radius: 20px;
-    border: 0px;
-}
-
-.subscribe_bt {
-    float: right;
-}
-
-.subscribe_bt a {
-    width: 170px;
-    float: left;
-    font-size: 18px;
-    color: #2b2278;
-    background-color: transparent;
-    padding: 5px 0px;
-    text-align: center;
-    font-weight: 500;
-    text-transform: uppercase;
-}
-
-.subscribe_bt a:hover {
-    color: #000;
-    background-color: transparent;
-} */
-
 .social_icon {
     width: 100%;
     margin: 0 auto;
@@ -1039,16 +819,6 @@ button {
     font-size: 16px;
     margin-left: 0px;
 }
-
-/* .copyright_text a {
-    color: #ffffff;
-}
-
-.copyright_text a:hover {
-    color: #e27141;
-} */
-
-
 
 
 
