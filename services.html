@@ -919,7 +919,20 @@
       </div>
    </div>
 
+   <!-- Código para cerrar al hacer clic fuera -->
+   <script>
+      window.addEventListener('click', function (e) {
+         const modal = document.querySelector('.custom-modal');
+         const contenido = document.querySelector('.modal-contenido');
+         if (modal && e.target === modal) {
+            cerrarModal();
+         }
+      });
+   </script>
+
 </body>
+
+
 <script>
    document.addEventListener("DOMContentLoaded", function () {
       var grid = document.querySelector('.posts');

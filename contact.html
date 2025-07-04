@@ -33,6 +33,648 @@
    <link rel="stylesheet" href="css/owl.theme.default.min.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
       media="screen">
+
+   <!-- Estilos modernos para contacto -->
+   <style>
+      /* Estilos modernos para la página de contacto */
+      .contact_section {
+         background: linear-gradient(135deg, #2c3e50 0%, #34495e 25%, #2c3e50 50%, #1a252f 75%, #0d1117 100%);
+         position: relative;
+         overflow: hidden;
+         min-height: 100vh;
+         padding: 80px 0;
+      }
+
+      .contact_section::before {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         background:
+            url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="rgba(255,255,255,0.08)"/></svg>'),
+            url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,120V92.29c47.79-22.2,103.59-32.17,158-28,70.36,5.37,136.33,33.31,206.8,37.5C438.64,107.57,512.34,86.33,583,67.95c69.27-18,138.3-24.88,209.4-13.08,36.15,6,69.85,17.84,104.45,29.34C989.49,95,1113,134.29,1200,67.53V120Z" fill="rgba(255,255,255,0.05)"/></svg>'),
+            url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon fill="rgba(255,255,255,0.03)" points="20,0 80,0 60,100 40,100"/><polygon fill="rgba(255,255,255,0.02)" points="0,20 100,10 90,80 10,90"/></svg>');
+         background-size: 100% 120px, 100% 120px, 150px 150px;
+         background-position: bottom, top, 0 0;
+         animation: mountainMove 30s linear infinite;
+      }
+
+      .contact_section::after {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.4)"/><circle cx="90" cy="20" r="0.8" fill="rgba(255,255,255,0.3)"/><circle cx="30" cy="80" r="1.2" fill="rgba(255,255,255,0.35)"/><circle cx="70" cy="60" r="0.6" fill="rgba(255,255,255,0.45)"/><circle cx="50" cy="30" r="0.4" fill="rgba(255,255,255,0.25)"/></svg>');
+         background-size: 200px 200px;
+         animation: stars 40s linear infinite;
+      }
+
+      @keyframes mountainMove {
+         0% {
+            background-position: bottom, top, 0 0;
+         }
+
+         100% {
+            background-position: bottom, top, 150px 0;
+         }
+      }
+
+      @keyframes stars {
+         0% {
+            transform: translateX(-200px);
+         }
+
+         100% {
+            transform: translateX(200px);
+         }
+      }
+
+      .contact_taital {
+         color: #fff;
+         font-size: 2.5rem;
+         text-align: center;
+         margin-bottom: 20px;
+         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+         position: relative;
+         z-index: 2;
+      }
+
+      .contact_subtitle {
+         color: rgba(255, 255, 255, 0.8);
+         text-align: center;
+         font-size: 1.1rem;
+         margin-bottom: 50px;
+         position: relative;
+         z-index: 2;
+      }
+
+      .contact_container {
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         gap: 40px;
+         max-width: 1200px;
+         margin: 0 auto;
+         position: relative;
+         z-index: 2;
+      }
+
+      .contact_info {
+         background: rgba(255, 255, 255, 0.1);
+         backdrop-filter: blur(10px);
+         border-radius: 20px;
+         padding: 40px;
+         border: 1px solid rgba(255, 255, 255, 0.2);
+         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      }
+
+      .contact_form {
+         background: rgba(255, 255, 255, 0.1);
+         backdrop-filter: blur(10px);
+         border-radius: 20px;
+         padding: 40px;
+         border: 1px solid rgba(255, 255, 255, 0.2);
+         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      }
+
+      .info_item {
+         display: flex;
+         align-items: center;
+         margin-bottom: 25px;
+         padding: 20px;
+         background: rgba(255, 255, 255, 0.05);
+         border-radius: 15px;
+         transition: all 0.3s ease;
+         cursor: pointer;
+      }
+
+      .info_item:hover {
+         transform: translateY(-5px);
+         background: rgba(255, 255, 255, 0.1);
+         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      .info_icon {
+         width: 60px;
+         height: 60px;
+         border-radius: 50%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         margin-right: 20px;
+         color: white;
+         font-size: 1.5rem;
+         background: linear-gradient(135deg, #3498db, #2980b9);
+         box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+      }
+
+      .info_icon.whatsapp {
+         background: linear-gradient(135deg, #25d366, #128c7e);
+         box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+      }
+
+      .info_icon.email {
+         background: linear-gradient(135deg, #e74c3c, #c0392b);
+         box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+      }
+
+      .info_icon.location {
+         background: linear-gradient(135deg, #f39c12, #e67e22);
+         box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+      }
+
+      .location_item {
+         cursor: default !important;
+      }
+
+      .map_toggle_btn {
+         background: linear-gradient(135deg, #f39c12, #e67e22);
+         color: white;
+         border: none;
+         padding: 8px 16px;
+         border-radius: 20px;
+         font-size: 0.9rem;
+         cursor: pointer;
+         transition: all 0.3s ease;
+         margin-top: 10px;
+         box-shadow: 0 2px 10px rgba(243, 156, 18, 0.3);
+      }
+
+      .map_toggle_btn:hover {
+         transform: translateY(-2px);
+         box-shadow: 0 4px 15px rgba(243, 156, 18, 0.5);
+      }
+
+      .map_container {
+         margin-top: 20px;
+         padding: 20px;
+         background: rgba(255, 255, 255, 0.05);
+         border-radius: 15px;
+         border: 1px solid rgba(255, 255, 255, 0.1);
+         animation: fadeIn 0.8s ease-out;
+      }
+
+      .map_wrapper {
+         position: relative;
+         overflow: hidden;
+         border-radius: 10px;
+         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .map_info {
+         display: flex;
+         justify-content: space-between;
+         margin-top: 15px;
+         flex-wrap: wrap;
+         gap: 15px;
+      }
+
+      .map_info p {
+         color: rgba(255, 255, 255, 0.8);
+         font-size: 0.9rem;
+         margin: 0;
+         display: flex;
+         align-items: center;
+         gap: 8px;
+      }
+
+      .map_info i {
+         color: #f39c12;
+      }
+
+      @keyframes fadeIn {
+         from {
+            opacity: 0;
+            transform: translateY(10px);
+         }
+
+         to {
+            opacity: 1;
+            transform: translateY(0);
+         }
+      }
+
+      .info_details h3 {
+         color: #fff;
+         margin-bottom: 5px;
+         font-size: 1.2rem;
+      }
+
+      .info_details p {
+         color: rgba(255, 255, 255, 0.8);
+         margin: 0;
+         font-size: 1rem;
+      }
+
+      .info_details a {
+         color: rgba(255, 255, 255, 0.9);
+         text-decoration: none;
+         transition: color 0.3s ease;
+      }
+
+      .info_details a:hover {
+         color: #fff;
+      }
+
+      .form_title {
+         color: #fff;
+         font-size: 1.8rem;
+         margin-bottom: 30px;
+         text-align: center;
+      }
+
+      .form-group {
+         margin-bottom: 25px;
+      }
+
+      .form-group label {
+         color: rgba(255, 255, 255, 0.9);
+         display: block;
+         margin-bottom: 8px;
+         font-weight: 500;
+      }
+
+      .email-bt,
+      .massage-bt {
+         width: 100%;
+         padding: 15px 20px;
+         border: none;
+         border-radius: 10px;
+         background: rgba(255, 255, 255, 0.1);
+         color: #fff;
+         font-size: 1rem;
+         transition: all 0.3s ease;
+         border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .email-bt:focus,
+      .massage-bt:focus {
+         outline: none;
+         background: rgba(255, 255, 255, 0.15);
+         border-color: rgba(255, 255, 255, 0.4);
+         transform: scale(1.02);
+      }
+
+      .email-bt::placeholder,
+      .massage-bt::placeholder {
+         color: rgba(255, 255, 255, 0.6);
+      }
+
+      .send_btn {
+         text-align: center;
+         margin-top: 30px;
+      }
+
+      .btn-primary {
+         background: linear-gradient(135deg, #3498db, #2980b9);
+         border: none;
+         padding: 15px 40px;
+         border-radius: 50px;
+         font-size: 1.1rem;
+         font-weight: 600;
+         transition: all 0.3s ease;
+         box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+      }
+
+      .btn-primary:hover {
+         transform: translateY(-2px);
+         box-shadow: 0 8px 25px rgba(52, 152, 219, 0.6);
+         background: linear-gradient(135deg, #2980b9, #3498db);
+      }
+
+      .footer_section {
+         background: #1a252f;
+         position: relative;
+      }
+
+      .footer_section::before {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+         height: 2px;
+         background: linear-gradient(90deg, transparent, #3498db, transparent);
+      }
+
+      .quick_contact {
+         display: flex;
+         justify-content: center;
+         gap: 15px;
+         margin-bottom: 25px;
+         flex-wrap: wrap;
+      }
+
+      .quick_btn {
+         display: flex;
+         align-items: center;
+         gap: 10px;
+         padding: 12px 25px;
+         border-radius: 25px;
+         text-decoration: none;
+         color: white;
+         font-weight: 500;
+         transition: all 0.3s ease;
+         border: 2px solid transparent;
+         font-size: 0.9rem;
+      }
+
+      .quick_btn.whatsapp {
+         background: linear-gradient(135deg, #25d366, #128c7e);
+      }
+
+      .quick_btn.email {
+         background: linear-gradient(135deg, #e74c3c, #c0392b);
+      }
+
+      .quick_btn:hover {
+         transform: translateY(-3px);
+         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+         color: white;
+         text-decoration: none;
+      }
+
+      .social_icon {
+         margin-top: 15px;
+      }
+
+      .social_icon ul {
+         display: flex;
+         justify-content: center;
+         gap: 12px;
+         list-style: none;
+         padding: 0;
+         margin: 0;
+      }
+
+      .social_icon li a {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         width: 45px;
+         height: 45px;
+         border-radius: 50%;
+         background: rgba(255, 255, 255, 0.1);
+         transition: all 0.3s ease;
+         border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .social_icon li a:hover {
+         transform: translateY(-3px) scale(1.1);
+         background: rgba(255, 255, 255, 0.2);
+      }
+
+      .social_icon li a img {
+         width: 20px;
+         height: 20px;
+      }
+
+      /* Animaciones de entrada */
+      .contact_info {
+         animation: slideInLeft 0.8s ease-out;
+      }
+
+      .contact_form {
+         animation: slideInRight 0.8s ease-out;
+      }
+
+      @keyframes slideInLeft {
+         from {
+            opacity: 0;
+            transform: translateX(-50px);
+         }
+
+         to {
+            opacity: 1;
+            transform: translateX(0);
+         }
+      }
+
+      @keyframes slideInRight {
+         from {
+            opacity: 0;
+            transform: translateX(50px);
+         }
+
+         to {
+            opacity: 1;
+            transform: translateX(0);
+         }
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+         .contact_container {
+            grid-template-columns: 1fr;
+            gap: 30px;
+         }
+
+         .contact_taital {
+            font-size: 2rem;
+         }
+
+         .contact_info,
+         .contact_form {
+            padding: 25px;
+         }
+
+         .info_item {
+            flex-direction: column;
+            text-align: center;
+         }
+
+         .info_icon {
+            margin-right: 0;
+            margin-bottom: 15px;
+         }
+
+         .quick_contact {
+            flex-direction: column;
+            align-items: center;
+         }
+      }
+   </style>
+
+
+   <!-- <style>
+      .contact_section {
+         background-color: #0A3D62;
+         padding: 80px 0;
+         color: white;
+      }
+
+      .contact_taital {
+         text-align: center;
+         font-size: 2.5rem;
+         margin-bottom: 10px;
+         font-weight: bold;
+      }
+
+      .contact_subtitle {
+         text-align: center;
+         color: #ccc;
+         margin-bottom: 40px;
+         font-size: 1.1rem;
+      }
+
+      .contact_container {
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         gap: 40px;
+         max-width: 1200px;
+         margin: 0 auto;
+      }
+
+      .contact_info,
+      .contact_form {
+         background-color: rgba(255, 255, 255, 0.05);
+         border-radius: 15px;
+         padding: 30px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+         backdrop-filter: blur(10px);
+      }
+
+      .form_title {
+         text-align: center;
+         font-size: 1.8rem;
+         margin-bottom: 25px;
+         font-weight: 600;
+         color: #ffffff;
+      }
+
+      .info_item {
+         display: flex;
+         align-items: center;
+         margin-bottom: 20px;
+         background-color: rgba(255, 255, 255, 0.08);
+         padding: 15px;
+         border-radius: 10px;
+         transition: transform 0.3s ease;
+      }
+
+      .info_item:hover {
+         transform: translateY(-3px);
+         background-color: rgba(255, 255, 255, 0.12);
+      }
+
+      .info_icon {
+         width: 45px;
+         height: 45px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         border-radius: 50%;
+         background-color: #3498db;
+         color: white;
+         margin-right: 15px;
+         font-size: 1.3rem;
+      }
+
+      .info_details h3 {
+         margin: 0;
+         font-size: 1.1rem;
+         color: white;
+      }
+
+      .info_details p,
+      .info_details a {
+         margin: 0;
+         color: #ddd;
+         font-size: 0.95rem;
+         text-decoration: none;
+      }
+
+      .email-bt,
+      .massage-bt,
+      .email-bt:focus,
+      .massage-bt:focus {
+         width: 100%;
+         padding: 12px 16px;
+         border: none;
+         border-radius: 8px;
+         background-color: rgba(255, 255, 255, 0.08);
+         color: white;
+         font-size: 1rem;
+         outline: none;
+         transition: background 0.3s ease;
+         border: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+      .email-bt::placeholder,
+      .massage-bt::placeholder {
+         color: #bbb;
+      }
+
+      .form-group {
+         margin-bottom: 20px;
+      }
+
+      .btn-primary {
+         background: linear-gradient(135deg, #3498db, #2980b9);
+         border: none;
+         padding: 12px 30px;
+         border-radius: 30px;
+         color: white;
+         font-weight: bold;
+         transition: all 0.3s ease;
+         cursor: pointer;
+         box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+      }
+
+      .btn-primary:hover {
+         transform: translateY(-2px);
+         background: linear-gradient(135deg, #2980b9, #3498db);
+      }
+
+      .map_wrapper iframe {
+         width: 100%;
+         height: 250px;
+         border-radius: 10px;
+         border: 0;
+      }
+
+      .map_info {
+         display: flex;
+         justify-content: space-between;
+         flex-wrap: wrap;
+         color: #ccc;
+         font-size: 0.9rem;
+         margin-top: 15px;
+      }
+
+      .map_info p i {
+         color: #f39c12;
+         margin-right: 5px;
+      }
+
+      @media (max-width: 768px) {
+         .contact_container {
+            grid-template-columns: 1fr;
+            padding: 0 20px;
+         }
+
+         .form_title {
+            font-size: 1.5rem;
+         }
+
+         .contact_taital {
+            font-size: 2rem;
+         }
+
+         .info_item {
+            flex-direction: column;
+            align-items: flex-start;
+         }
+
+         .info_icon {
+            margin-bottom: 10px;
+         }
+      }
+   </style> -->
+
 </head>
 
 <body>
@@ -57,11 +699,8 @@
                      <li class="nav-item">
                         <a class="nav-link" href="services.html">Productos</a>
                      </li>
-                     <!-- <li class="nav-item">
-                        <a class="nav-link " href="blog.html">Equipo</a>
-                     </li> -->
                      <li class="nav-item">
-                        <a class="nav-link " href="contact.html">Contacto</a>
+                        <a class="nav-link active" href="contact.html">Contacto</a>
                      </li>
                   </ul>
                </div>
@@ -71,73 +710,142 @@
             <div class="logo"><a href="index.html"><img src="images/weke/inicio/logo-weke2.png"></a></div>
             <div class="menu_main">
                <ul>
-                  <li class="active"><a href="index.html">Inicio</a></li>
+                  <li><a href="index.html">Inicio</a></li>
                   <li><a href="about.html">Nosotros</a></li>
                   <li><a href="services.html">Productos</a></li>
-                  <!-- <li><a href="blog.html">Equipo</a></li> -->
-                  <li><a href="contact.html">Contacto</a></li>
+                  <li class="active"><a href="contact.html">Contacto</a></li>
                </ul>
             </div>
          </div>
       </div>
    </div>
    <!-- header section end -->
+
    <!-- contact section start -->
    <div class="contact_section layout_padding">
       <div class="container">
          <h1 class="contact_taital">Canales de venta y distribución</h1>
-         <form id="formContacto">
-            <div class="email_text">
-               <div class="form-group">
-                  <input type="text" class="email-bt" placeholder="Nombre" name="nombre" required>
+         <p class="contact_subtitle">Conecta con WEKE y descubre la mejor ropa técnica para tus aventuras outdoor</p>
+
+         <div class="contact_container">
+            <!-- Información de contacto -->
+            <div class="contact_info">
+               <h2 class="form_title">Contáctanos Directamente</h2>
+
+               <div class="info_item" onclick="window.open('https://wa.me/56998785258', '_blank')">
+                  <div class="info_icon whatsapp">
+                     <i class="fab fa-whatsapp"></i>
+                  </div>
+                  <div class="info_details">
+                     <h3>WhatsApp</h3>
+                     <p><a href="https://wa.me/56998785258" target="_blank">+569 98785258</a></p>
+                  </div>
                </div>
-               <div class="form-group">
-                  <input type="text" class="email-bt" placeholder="Numero de telefono" name="telefono" required>
+
+               <div class="info_item" onclick="window.open('mailto:contacto@wekeoutdoor.cl', '_blank')">
+                  <div class="info_icon email">
+                     <i class="fas fa-envelope"></i>
+                  </div>
+                  <div class="info_details">
+                     <h3>Email</h3>
+                     <p><a
+                           href="mailto:contacto@wekeoutdoor.cl,vidalina.diaz@wekeoutdoor.cl">contacto@wekeoutdoor.cl</a>
+                     </p>
+                  </div>
                </div>
-               <div class="form-group">
-                  <input type="email" class="email-bt" placeholder="Email" name="correo" required>
+
+               <div class="info_item location_item">
+                  <div class="info_icon location">
+                     <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div class="info_details">
+                     <h3>Ubicación</h3>
+                     <p>Gredos 7952, Las Condes</p>
+                     <p>Santiago, Chile</p>
+                  </div>
                </div>
-               <div class="form-group">
-                  <textarea class="massage-bt" placeholder="Agrega un comentario" rows="5" id="comentario"
-                     name="mensaje" required></textarea>
+
+               <!-- Mapa de Google Maps -->
+               <div class="map_container" id="mapContainer">
+                  <h4 style="color: #fff; margin-bottom: 15px; text-align: center;">
+                     <i class="fas fa-map-marked-alt"></i> Nuestra Ubicación
+                  </h4>
+                  <div class="map_wrapper">
+                     <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3328.2234567890123!2d-70.51234567890123!3d-33.39876543210987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf1c7c1e6b7f%3A0x5b9c9b8b6b0f7f9b!2sGredos%207952%2C%20Las%20Condes%2C%20Regi%C3%B3n%20Metropolitana%2C%20Chile!5e0!3m2!1ses!2scl!4v1634567890123!5m2!1ses!2scl"
+                        width="100%" height="250" style="border:0; border-radius: 10px;" allowfullscreen=""
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                     </iframe>
+                  </div>
+                  <div class="map_info">
+                     <p><i class="fas fa-map-pin"></i> Gredos 7952, Las Condes</p>
+                     <p><i class="fas fa-mountain"></i> Santiago, Chile</p>
+                  </div>
                </div>
-               <div class="send_btn">
-                  <button type="submit" class="btn btn-primary">Enviar solicitud</button>
+
+               <div class="info_item">
+                  <div class="info_icon">
+                     <i class="fas fa-clock"></i>
+                  </div>
+                  <div class="info_details">
+                     <h3>Horario de Atención</h3>
+                     <p>Lunes a Viernes: 9:00 - 18:00</p>
+                  </div>
                </div>
             </div>
-         </form>
+
+            <!-- Formulario de contacto -->
+            <div class="contact_form">
+               <h2 class="form_title">Envíanos tu Consulta</h2>
+               <form id="formContacto" action="mailto:contacto@wekeoutdoor.cl" method="post" enctype="text/plain">
+                  <div class="form-group">
+                     <label for="nombre">Nombre completo</label>
+                     <input type="text" class="email-bt" placeholder="Tu nombre completo" name="Nombre" id="nombre"
+                        required title="Completa este campo obligatorio">
+                  </div>
+
+                  <div class="form-group">
+                     <label for="telefono">Teléfono</label>
+                     <input type="tel" class="email-bt" placeholder="Número de teléfono" name="Teléfono" id="telefono"
+                        required title="Completa este campo obligatorio">
+                  </div>
+
+                  <div class="form-group">
+                     <label for="correo">Email</label>
+                     <input type="email" class="email-bt" placeholder="tu@email.com" name="Email" id="correo" required
+                        title="Ingresa un email válido">
+                  </div>
+
+                  <div class="form-group">
+                     <label for="asunto">Asunto</label>
+                     <select class="email-bt" name="Asunto" id="asunto" required title="Selecciona un tema">
+                        <option value="">Selecciona un tema</option>
+                        <option value="Distribución y venta">Distribución y venta</option>
+                        <option value="Consulta sobre productos">Consulta sobre productos</option>
+                        <option value="Reparaciones">Reparaciones</option>
+                        <option value="Ventas corporativas">Ventas corporativas</option>
+                        <option value="Otros">Otros</option>
+                     </select>
+                  </div>
+
+                  <div class="form-group">
+                     <label for="mensaje">Mensaje</label>
+                     <textarea class="massage-bt"
+                        placeholder="Cuéntanos sobre tu consulta, proyecto o cómo podemos ayudarte..." rows="5"
+                        id="mensaje" name="Mensaje" required title="Completa este campo obligatorio"></textarea>
+                  </div>
+
+                  <div class="send_btn">
+                     <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Enviar Solicitud
+                     </button>
+                  </div>
+               </form>
+            </div>
+         </div>
       </div>
    </div>
-   <!-- contact section end -->
-   <!-- footer section start -->
-   <div class="footer_section layout_padding">
-      <div class="container">
-         <!-- <div class="input_btn_main">
-            <input type="text" class="mail_text" placeholder="Enter your email" name="Enter your email">
-            <div class="subscribe_bt"><a href="#">Subscribe</a></div>
-         </div> -->
-         <div class="location_main">
-            <div class="call_text"><img src="images/weke/contacto/whatsapp.png"></div>
-            <div class="call_text"><a href="https://wa.me/56998785258" target="_blank">+569 98785258</a></div>
-            <div class="call_text"><img src="images//weke/contacto/gmail.png"></div>
-            <div class="call_text"> <a href="mailto:contacto@wekeoutdoor.cl,vidalina.diaz@wekeoutdoor.cl"
-                  target="_blank">contacto@wekeoutdoor.cl</div>
-         </div>
-         <div class="social_icon">
-            <ul>
-               <li><a href="https://www.facebook.com/WekeChile" target="_blank"><img
-                        src="images/weke/contacto/facebook.png"></a></li>
-               <li><a href="https://www.instagram.com/weke_outdoor/" target="_blank"><img
-                        src="images/weke/contacto/instagram.png"></a>
-               </li>
-               <li><a href="https://cl.pinterest.com/wekeoutdoor/" target="_blank"><img
-                        src="images/weke/contacto/pinterest.png"></a>
-               </li>
-            </ul>
-         </div>
-      </div>
-   </div>
-   <!-- footer section end -->
+
    <!-- copyright section start -->
    <div class="copyright_section">
       <div class="container">
@@ -160,5 +868,115 @@
    <script src="js/owl.carousel.js"></script>
    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 </body>
+
+<!-- Script para funcionalidad del formulario -->
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+      // Configurar validación en español
+      const form = document.getElementById('formContacto');
+
+      // Función para personalizar mensajes de validación
+      function setCustomValidationMessages() {
+         const inputs = form.querySelectorAll('input, textarea, select');
+
+         inputs.forEach(input => {
+            input.addEventListener('invalid', function (e) {
+               const field = e.target;
+
+               // Limpiar mensaje anterior
+               field.setCustomValidity('');
+
+               // Verificar tipo de error y establecer mensaje en español
+               if (field.validity.valueMissing) {
+                  if (field.type === 'email') {
+                     field.setCustomValidity('Completa este campo obligatorio');
+                  } else if (field.tagName === 'SELECT') {
+                     field.setCustomValidity('Selecciona una opción');
+                  } else {
+                     field.setCustomValidity('Completa este campo obligatorio');
+                  }
+               } else if (field.validity.typeMismatch) {
+                  if (field.type === 'email') {
+                     field.setCustomValidity('Ingresa un email válido');
+                  } else if (field.type === 'tel') {
+                     field.setCustomValidity('Ingresa un número de teléfono válido');
+                  }
+               } else if (field.validity.tooShort) {
+                  field.setCustomValidity('El texto es demasiado corto');
+               } else if (field.validity.patternMismatch) {
+                  field.setCustomValidity('El formato no es válido');
+               }
+            });
+
+            // Limpiar mensaje cuando el campo se vuelve válido
+            input.addEventListener('input', function () {
+               if (this.validity.valid) {
+                  this.setCustomValidity('');
+               }
+            });
+         });
+      }
+
+      // Inicializar validación personalizada
+      setCustomValidationMessages();
+
+      // Función para mostrar/ocultar el mapa
+      window.toggleMap = function () {
+         const mapContainer = document.getElementById('mapContainer');
+         const toggleBtn = document.querySelector('.map_toggle_btn');
+
+         if (mapContainer.style.display === 'none') {
+            mapContainer.style.display = 'block';
+            toggleBtn.innerHTML = '<i class="fas fa-times"></i> Ocultar Mapa';
+         } else {
+            mapContainer.style.display = 'none';
+            toggleBtn.innerHTML = '<i class="fas fa-map"></i> Ver en Mapa';
+         }
+      };
+
+      // Manejo del formulario
+      document.getElementById('formContacto').addEventListener('submit', function (e) {
+         // Validar campos antes de enviar
+         if (!this.checkValidity()) {
+            e.preventDefault();
+            this.reportValidity();
+            return;
+         }
+
+         // El formulario se enviará automáticamente por mailto:
+         // No necesitamos preventDefault() aquí
+
+         const submitBtn = this.querySelector('button[type="submit"]');
+         const originalText = submitBtn.innerHTML;
+
+         // Mostrar feedback visual
+         submitBtn.innerHTML = '<i class="fas fa-check"></i> Abriendo cliente de correo...';
+         submitBtn.style.background = 'linear-gradient(135deg, #27ae60, #2ecc71)';
+
+         // Restaurar botón después de un momento
+         setTimeout(() => {
+            submitBtn.innerHTML = originalText;
+            submitBtn.style.background = 'linear-gradient(135deg, #3498db, #2980b9)';
+         }, 3000);
+      });
+
+      // Animación de entrada para elementos
+      const observer = new IntersectionObserver((entries) => {
+         entries.forEach(entry => {
+            if (entry.isIntersecting) {
+               entry.target.style.opacity = '1';
+               entry.target.style.transform = 'translateY(0)';
+            }
+         });
+      });
+
+      document.querySelectorAll('.info_item').forEach(el => {
+         el.style.opacity = '0';
+         el.style.transform = 'translateY(20px)';
+         el.style.transition = 'all 0.6s ease';
+         observer.observe(el);
+      });
+   });
+</script>
 
 </html>
