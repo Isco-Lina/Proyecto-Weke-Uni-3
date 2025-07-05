@@ -340,7 +340,6 @@
     .navbar-light .navbar-nav .nav-link.show,
     .navbar-light .navbar-nav .show>.nav-link {
         color: #ffffff;
-        background: red;
     }
     .banner_text {
         width: 100%;

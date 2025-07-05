@@ -5,10 +5,10 @@
    <!-- basic -->
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
    <!-- mobile metas -->
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=5">
    <!-- site metas -->
    <title>WEKE - Contacto | Ropa Técnica Outdoor</title>
    <meta name="keywords" content="contacto, weke, ropa técnica, outdoor, chile">
@@ -37,75 +37,42 @@
 
    <!-- Estilos modernos para contacto -->
    <style>
-      /* Estilos modernos para la página de contacto */
+      /* Estilos modernos para la página de contacto con fondo blanco */
       .contact_section {
-         background: linear-gradient(135deg, #2c3e50 0%, #34495e 25%, #2c3e50 50%, #1a252f 75%, #0d1117 100%);
+         background: #ffffff;
          position: relative;
          overflow: hidden;
          min-height: 100vh;
          padding: 80px 0;
       }
 
-      .contact_section::before {
-         content: '';
-         position: absolute;
-         top: 0;
-         left: 0;
-         right: 0;
-         bottom: 0;
-         background:
-            url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="rgba(255,255,255,0.08)"/></svg>'),
-            url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,120V92.29c47.79-22.2,103.59-32.17,158-28,70.36,5.37,136.33,33.31,206.8,37.5C438.64,107.57,512.34,86.33,583,67.95c69.27-18,138.3-24.88,209.4-13.08,36.15,6,69.85,17.84,104.45,29.34C989.49,95,1113,134.29,1200,67.53V120Z" fill="rgba(255,255,255,0.05)"/></svg>'),
-            url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon fill="rgba(255,255,255,0.03)" points="20,0 80,0 60,100 40,100"/><polygon fill="rgba(255,255,255,0.02)" points="0,20 100,10 90,80 10,90"/></svg>');
-         background-size: 100% 120px, 100% 120px, 150px 150px;
-         background-position: bottom, top, 0 0;
-         animation: mountainMove 30s linear infinite;
-      }
-
+      /* Eliminar las animaciones de fondo anteriores */
+      .contact_section::before,
       .contact_section::after {
-         content: '';
-         position: absolute;
-         top: 0;
-         left: 0;
-         right: 0;
-         bottom: 0;
-         background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.4)"/><circle cx="90" cy="20" r="0.8" fill="rgba(255,255,255,0.3)"/><circle cx="30" cy="80" r="1.2" fill="rgba(255,255,255,0.35)"/><circle cx="70" cy="60" r="0.6" fill="rgba(255,255,255,0.45)"/><circle cx="50" cy="30" r="0.4" fill="rgba(255,255,255,0.25)"/></svg>');
-         background-size: 200px 200px;
-         animation: stars 40s linear infinite;
+         display: none;
       }
 
-      @keyframes mountainMove {
-         0% {
-            background-position: bottom, top, 0 0;
-         }
-
-         100% {
-            background-position: bottom, top, 150px 0;
-         }
-      }
-
-      @keyframes stars {
-         0% {
-            transform: translateX(-200px);
-         }
-
-         100% {
-            transform: translateX(200px);
-         }
+      /* Opcional: Si quieres agregar un sutil patrón de fondo */
+      .contact_section {
+         background-color: #ffffff;
+         background-image:
+            radial-gradient(circle at 20% 80%, rgba(52, 152, 219, 0.05) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(243, 156, 18, 0.05) 0%, transparent 50%),
+            radial-gradient(circle at 40% 40%, rgba(46, 204, 113, 0.05) 0%, transparent 50%);
       }
 
       .contact_taital {
-         color: #fff;
+         color: #2c3e50;
          font-size: 2.5rem;
          text-align: center;
          margin-bottom: 20px;
-         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+         text-shadow: none;
          position: relative;
          z-index: 2;
       }
 
       .contact_subtitle {
-         color: rgba(255, 255, 255, 0.8);
+         color: #7f8c8d;
          text-align: center;
          font-size: 1.1rem;
          margin-bottom: 50px;
@@ -124,21 +91,21 @@
       }
 
       .contact_info {
-         background: rgba(255, 255, 255, 0.1);
-         backdrop-filter: blur(10px);
+         background: #f8f9fa;
+         backdrop-filter: none;
          border-radius: 20px;
          padding: 40px;
-         border: 1px solid rgba(255, 255, 255, 0.2);
-         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+         border: 1px solid #e0e0e0;
+         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
       }
 
       .contact_form {
-         background: rgba(255, 255, 255, 0.1);
-         backdrop-filter: blur(10px);
+         background: #f8f9fa;
+         backdrop-filter: none;
          border-radius: 20px;
          padding: 40px;
-         border: 1px solid rgba(255, 255, 255, 0.2);
-         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+         border: 1px solid #e0e0e0;
+         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
       }
 
       .info_item {
@@ -146,16 +113,18 @@
          align-items: center;
          margin-bottom: 25px;
          padding: 20px;
-         background: rgba(255, 255, 255, 0.05);
+         background: #ffffff;
          border-radius: 15px;
          transition: all 0.3s ease;
          cursor: pointer;
+         border: 1px solid #ecf0f1;
       }
 
       .info_item:hover {
          transform: translateY(-5px);
-         background: rgba(255, 255, 255, 0.1);
-         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+         background: #ffffff;
+         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+         border-color: #3498db;
       }
 
       .info_icon {
@@ -212,10 +181,16 @@
       .map_container {
          margin-top: 20px;
          padding: 20px;
-         background: rgba(255, 255, 255, 0.05);
+         background: #ffffff;
          border-radius: 15px;
-         border: 1px solid rgba(255, 255, 255, 0.1);
+         border: 1px solid #ecf0f1;
          animation: fadeIn 0.8s ease-out;
+      }
+
+      .map_container h4 {
+         color: #2c3e50 !important;
+         margin-bottom: 15px;
+         text-align: center;
       }
 
       .map_wrapper {
@@ -234,7 +209,7 @@
       }
 
       .map_info p {
-         color: rgba(255, 255, 255, 0.8);
+         color: #7f8c8d !important;
          font-size: 0.9rem;
          margin: 0;
          display: flex;
@@ -259,29 +234,29 @@
       }
 
       .info_details h3 {
-         color: #fff;
+         color: #2c3e50;
          margin-bottom: 5px;
          font-size: 1.2rem;
       }
 
       .info_details p {
-         color: rgba(255, 255, 255, 0.8);
+         color: #7f8c8d;
          margin: 0;
          font-size: 1rem;
       }
 
       .info_details a {
-         color: rgba(255, 255, 255, 0.9);
+         color: #3498db;
          text-decoration: none;
          transition: color 0.3s ease;
       }
 
       .info_details a:hover {
-         color: #fff;
+         color: #2980b9;
       }
 
       .form_title {
-         color: #fff;
+         color: #2c3e50;
          font-size: 1.8rem;
          margin-bottom: 30px;
          text-align: center;
@@ -292,7 +267,7 @@
       }
 
       .form-group label {
-         color: rgba(255, 255, 255, 0.9);
+         color: #34495e;
          display: block;
          margin-bottom: 8px;
          font-weight: 500;
@@ -304,24 +279,83 @@
          padding: 15px 20px;
          border: none;
          border-radius: 10px;
-         background: rgba(255, 255, 255, 0.1);
-         color: #fff;
+         background: #ffffff;
+         color: #2c3e50;
          font-size: 1rem;
          transition: all 0.3s ease;
-         border: 1px solid rgba(255, 255, 255, 0.2);
+         border: 1px solid #dfe6e9;
       }
 
       .email-bt:focus,
       .massage-bt:focus {
          outline: none;
-         background: rgba(255, 255, 255, 0.15);
-         border-color: rgba(255, 255, 255, 0.4);
+         background: #ffffff;
+         border-color: #3498db;
          transform: scale(1.02);
+         box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
       }
 
       .email-bt::placeholder,
       .massage-bt::placeholder {
-         color: rgba(255, 255, 255, 0.6);
+         color: #95a5a6;
+      }
+
+      /* Estilos para los checkboxes */
+      .checkbox-group {
+         background: #ffffff;
+         border: 1px solid #dfe6e9;
+         border-radius: 10px;
+         padding: 20px;
+         margin-top: 8px;
+      }
+
+      .checkbox-group-title {
+         color: #7f8c8d;
+         font-size: 0.9rem;
+         margin-bottom: 15px;
+         font-weight: normal;
+      }
+
+      .checkbox-item {
+         display: flex;
+         align-items: center;
+         margin-bottom: 10px;
+         cursor: pointer;
+         padding: 5px 0;
+      }
+
+      .checkbox-item:last-child {
+         margin-bottom: 0;
+      }
+
+      .checkbox-item input[type="checkbox"] {
+         width: 16px;
+         height: 16px;
+         margin-right: 10px;
+         cursor: pointer;
+         flex-shrink: 0;
+      }
+
+      .checkbox-label {
+         color: #2c3e50;
+         font-size: 0.95rem;
+         user-select: none;
+         cursor: pointer;
+      }
+
+      .checkbox-error {
+         color: #e74c3c;
+         font-size: 0.85rem;
+         margin-top: 8px;
+         display: none;
+      }
+
+      .checkbox-group.error {
+         border-color: #e74c3c;
+      }
+
+      .checkbox-group.error .checkbox-error {
+         display: block;
       }
 
       .send_btn {
@@ -338,6 +372,7 @@
          font-weight: 600;
          transition: all 0.3s ease;
          box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+         color: white;
       }
 
       .btn-primary:hover {
@@ -405,7 +440,7 @@
       .social_icon ul {
          display: flex;
          justify-content: center;
-         gap: 12px;
+         gap: 25px;
          list-style: none;
          padding: 0;
          margin: 0;
@@ -415,22 +450,44 @@
          display: flex;
          align-items: center;
          justify-content: center;
-         width: 45px;
-         height: 45px;
+         width: 80px;
+         height: 80px;
          border-radius: 50%;
          background: rgba(255, 255, 255, 0.1);
          transition: all 0.3s ease;
-         border: 1px solid rgba(255, 255, 255, 0.2);
+         border: 2px solid rgba(255, 255, 255, 0.2);
+         font-size: 38px;
+         color: white;
       }
 
       .social_icon li a:hover {
-         transform: translateY(-3px) scale(1.1);
+         transform: translateY(-8px) scale(1.2);
          background: rgba(255, 255, 255, 0.2);
+         border-color: rgba(255, 255, 255, 0.4);
+         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .social_icon li a.facebook:hover {
+         background: #1877f2;
+         border-color: #1877f2;
+         box-shadow: 0 10px 30px rgba(24, 119, 242, 0.4);
+      }
+
+      .social_icon li a.instagram:hover {
+         background: linear-gradient(135deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45);
+         border-color: #E1306C;
+         box-shadow: 0 10px 30px rgba(225, 48, 108, 0.4);
+      }
+
+      .social_icon li a.pinterest:hover {
+         background: #E60023;
+         border-color: #E60023;
+         box-shadow: 0 10px 30px rgba(230, 0, 35, 0.4);
       }
 
       .social_icon li a img {
-         width: 40px;
-         height: 40px;
+         width: 20px;
+         height: 20px;
       }
 
       /* Animaciones de entrada */
@@ -466,12 +523,6 @@
          }
       }
 
-      /* footer section */
-
-      .footer_section.layout_padding {
-         padding: 10px;
-      }
-
       /* Responsive */
       @media (max-width: 768px) {
          .contact_container {
@@ -480,27 +531,171 @@
          }
 
          .contact_taital {
-            font-size: 2rem;
+            font-size: 1.8rem;
+            padding: 0 15px;
+         }
+
+         .contact_subtitle {
+            font-size: 1rem;
+            padding: 0 15px;
          }
 
          .contact_info,
          .contact_form {
             padding: 25px;
+            margin: 0 10px;
          }
 
          .info_item {
-            flex-direction: column;
-            text-align: center;
+            flex-direction: row;
+            text-align: left;
+            padding: 15px;
          }
 
          .info_icon {
-            margin-right: 0;
-            margin-bottom: 15px;
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+            margin-bottom: 0;
+            font-size: 1.2rem;
+         }
+
+         .info_details h3 {
+            font-size: 1.1rem;
+         }
+
+         .info_details p {
+            font-size: 0.9rem;
+         }
+
+         .form_title {
+            font-size: 1.5rem;
+         }
+
+         .checkbox-group {
+            padding: 15px;
+         }
+
+         .checkbox-item {
+            padding: 8px 0;
+         }
+
+         .checkbox-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            min-width: 18px;
+         }
+
+         .checkbox-label {
+            font-size: 0.9rem;
+            line-height: 1.4;
+         }
+
+         .email-bt,
+         .massage-bt {
+            padding: 12px 15px;
+            font-size: 16px;
+            /* Previene zoom en iOS */
+         }
+
+         .btn-primary {
+            padding: 12px 30px;
+            font-size: 1rem;
+            width: 100%;
+            max-width: 300px;
          }
 
          .quick_contact {
             flex-direction: column;
             align-items: center;
+            gap: 10px;
+         }
+
+         .quick_btn {
+            width: 90%;
+            max-width: 280px;
+            justify-content: center;
+         }
+
+         .social_icon ul {
+            gap: 15px;
+         }
+
+         .social_icon li a {
+            width: 60px;
+            height: 60px;
+            font-size: 28px;
+         }
+
+         .map_container {
+            padding: 15px;
+         }
+
+         .map_wrapper {
+            height: 200px;
+         }
+
+         .map_wrapper iframe {
+            height: 200px;
+         }
+
+         .map_info {
+            flex-direction: column;
+            gap: 8px;
+         }
+
+         /* Ajustes para pantallas muy pequeñas */
+         @media (max-width: 380px) {
+            .contact_taital {
+               font-size: 1.5rem;
+            }
+
+            .contact_info,
+            .contact_form {
+               padding: 20px 15px;
+            }
+
+            .info_icon {
+               width: 45px;
+               height: 45px;
+               font-size: 1.1rem;
+            }
+
+            .social_icon li a {
+               width: 55px;
+               height: 55px;
+               font-size: 24px;
+            }
+         }
+      }
+
+      /* Mejoras de accesibilidad para móviles */
+      @media (hover: none) {
+         .info_item:hover {
+            transform: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+         }
+
+         .checkbox-item:hover {
+            background: transparent;
+         }
+
+         .btn-primary:active {
+            transform: scale(0.98);
+         }
+
+         .social_icon li a:active {
+            transform: scale(0.95);
+         }
+      }
+
+      /* Prevenir zoom en iOS al enfocar inputs */
+      @supports (-webkit-touch-callout: none) {
+
+         .email-bt,
+         .massage-bt,
+         select {
+            font-size: 16px !important;
          }
       }
    </style>
@@ -551,7 +746,7 @@
    <!-- header section end -->
 
    <!-- contact section start -->
-   <div class="contact_section layout_padding">
+   <div class="contact_section layout_padding" style="padding: 5px;">
       <div class="container">
          <h1 class="contact_taital">Canales de venta y distribución</h1>
          <p class="contact_subtitle">Conecta con WEKE y descubre la mejor ropa técnica para tus aventuras outdoor</p>
@@ -596,7 +791,7 @@
 
                <!-- Mapa de Google Maps -->
                <div class="map_container" id="mapContainer">
-                  <h4 style="color: #fff; margin-bottom: 15px; text-align: center;">
+                  <h4>
                      <i class="fas fa-map-marked-alt"></i> Nuestra Ubicación
                   </h4>
                   <div class="map_wrapper">
@@ -646,15 +841,37 @@
                   </div>
 
                   <div class="form-group">
-                     <label for="asunto">Asunto</label>
-                     <select class="email-bt" name="Asunto" id="asunto" required title="Selecciona un tema">
-                        <option value="">Selecciona un tema</option>
-                        <option value="Distribución y venta">Distribución y venta</option>
-                        <option value="Consulta sobre productos">Consulta sobre productos</option>
-                        <option value="Reparaciones">Reparaciones</option>
-                        <option value="Ventas corporativas">Ventas corporativas</option>
-                        <option value="Otros">Otros</option>
-                     </select>
+                     <label>Asunto</label>
+                     <div class="checkbox-group" id="asuntoGroup">
+                        <p class="checkbox-group-title">Selecciona al menos un tema de consulta:</p>
+
+                        <label class="checkbox-item">
+                           <input type="checkbox" name="Asunto" value="Distribución y venta">
+                           <span class="checkbox-label">Distribución y venta</span>
+                        </label>
+
+                        <label class="checkbox-item">
+                           <input type="checkbox" name="Asunto" value="Consulta sobre productos">
+                           <span class="checkbox-label">Consulta sobre productos</span>
+                        </label>
+
+                        <label class="checkbox-item">
+                           <input type="checkbox" name="Asunto" value="Reparaciones">
+                           <span class="checkbox-label">Reparaciones</span>
+                        </label>
+
+                        <label class="checkbox-item">
+                           <input type="checkbox" name="Asunto" value="Ventas corporativas">
+                           <span class="checkbox-label">Ventas corporativas</span>
+                        </label>
+
+                        <label class="checkbox-item">
+                           <input type="checkbox" name="Asunto" value="Otros">
+                           <span class="checkbox-label">Otros</span>
+                        </label>
+
+                        <div class="checkbox-error">Debes seleccionar al menos un tema</div>
+                     </div>
                   </div>
 
                   <div class="form-group">
@@ -677,17 +894,33 @@
    <!-- contact section end -->
 
    <!-- footer section start -->
-   <div class="footer_section layout_padding">
+   <div class="footer_section layout_padding" style="padding: 0;">
       <div class="container">
+         <!-- <div class="quick_contact">
+            <a href="https://wa.me/56998785258" target="_blank" class="quick_btn whatsapp">
+               <i class="fab fa-whatsapp"></i>
+               <span>WhatsApp</span>
+            </a>
+            <a href="mailto:contacto@wekeoutdoor.cl,vidalina.diaz@wekeoutdoor.cl" target="_blank"
+               class="quick_btn email">
+               <i class="fas fa-envelope"></i>
+               <span>Email</span>
+            </a>
+         </div> -->
+
          <div class="social_icon">
             <ul>
-               <li><a href="https://www.facebook.com/WekeChile" target="_blank"><img
-                        src="images/weke/contacto/facebook.png"></a></li>
-               <li><a href="https://www.instagram.com/weke_outdoor/" target="_blank"><img
-                        src="images/weke/contacto/instagram.png"></a>
+               <li> <a href="https://www.facebook.com/WekeChile" target="_blank" class="facebook" title="Facebook">
+                     <i class="fab fa-facebook-f"></i>
+                  </a></li>
+               <li> <a href="https://www.instagram.com/weke_outdoor/" target="_blank" class="instagram"
+                     title="Instagram">
+                     <i class="fab fa-instagram"></i>
+                  </a>
                </li>
-               <li><a href="https://cl.pinterest.com/wekeoutdoor/" target="_blank"><img
-                        src="images/weke/contacto/pinterest.png"></a>
+               <li><a href="https://cl.pinterest.com/wekeoutdoor/" target="_blank" class="pinterest" title="Pinterest">
+                     <i class="fab fa-pinterest-p"></i>
+                  </a>
                </li>
             </ul>
          </div>
@@ -702,7 +935,6 @@
       </div>
    </div>
    <!-- copyright section end -->
-
    <!-- Javascript files-->
    <script src="js/jquery.min.js"></script>
    <script src="js/popper.min.js"></script>
