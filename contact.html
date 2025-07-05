@@ -821,7 +821,7 @@
             <!-- Formulario de contacto -->
             <div class="contact_form">
                <h2 class="form_title">Envíanos tu Consulta</h2>
-               <form id="formContacto" action="mailto:contacto@wekeoutdoor.cl" method="post" enctype="text/plain">
+               <form id="formContacto" onsubmit="enviarCorreo(); return false;" autocomplete="off">
                   <div class="form-group">
                      <label for="nombre">Nombre completo</label>
                      <input type="text" class="email-bt" placeholder="Tu nombre completo" name="Nombre" id="nombre"
@@ -939,39 +939,28 @@
    <script src="js/jquery.min.js"></script>
    <script src="js/popper.min.js"></script>
    <script src="js/bootstrap.bundle.min.js"></script>
-   <script src="js/jquery-3.0.0.min.js"></script>
    <script src="js/plugin.js"></script>
    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-   <script src="js/custom.js"></script>
    <script src="js/owl.carousel.js"></script>
+   <script src="js/custom.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 
    <!-- Script para funcionalidad del formulario -->
    <script>
       document.addEventListener('DOMContentLoaded', function () {
-         // Configurar validación en español
          const form = document.getElementById('formContacto');
 
-         // Función para personalizar mensajes de validación
+         // Validaciones personalizadas en español
          function setCustomValidationMessages() {
             const inputs = form.querySelectorAll('input, textarea, select');
 
             inputs.forEach(input => {
                input.addEventListener('invalid', function (e) {
                   const field = e.target;
-
-                  // Limpiar mensaje anterior
                   field.setCustomValidity('');
 
-                  // Verificar tipo de error y establecer mensaje en español
                   if (field.validity.valueMissing) {
-                     if (field.type === 'email') {
-                        field.setCustomValidity('Completa este campo obligatorio');
-                     } else if (field.tagName === 'SELECT') {
-                        field.setCustomValidity('Selecciona una opción');
-                     } else {
-                        field.setCustomValidity('Completa este campo obligatorio');
-                     }
+                     field.setCustomValidity('Completa este campo obligatorio');
                   } else if (field.validity.typeMismatch) {
                      if (field.type === 'email') {
                         field.setCustomValidity('Ingresa un email válido');
@@ -985,7 +974,6 @@
                   }
                });
 
-               // Limpiar mensaje cuando el campo se vuelve válido
                input.addEventListener('input', function () {
                   if (this.validity.valid) {
                      this.setCustomValidity('');
@@ -994,50 +982,23 @@
             });
          }
 
-         // Inicializar validación personalizada
          setCustomValidationMessages();
 
-         // Función para mostrar/ocultar el mapa
+         // Mostrar/ocultar mapa
          window.toggleMap = function () {
             const mapContainer = document.getElementById('mapContainer');
             const toggleBtn = document.querySelector('.map_toggle_btn');
 
-            if (mapContainer.style.display === 'none') {
-               mapContainer.style.display = 'block';
-               toggleBtn.innerHTML = '<i class="fas fa-times"></i> Ocultar Mapa';
-            } else {
-               mapContainer.style.display = 'none';
-               toggleBtn.innerHTML = '<i class="fas fa-map"></i> Ver en Mapa';
+            if (mapContainer && toggleBtn) {
+               const visible = mapContainer.style.display !== 'none';
+               mapContainer.style.display = visible ? 'none' : 'block';
+               toggleBtn.innerHTML = visible
+                  ? '<i class="fas fa-map"></i> Ver en Mapa'
+                  : '<i class="fas fa-times"></i> Ocultar Mapa';
             }
          };
 
-         // Manejo del formulario
-         document.getElementById('formContacto').addEventListener('submit', function (e) {
-            // Validar campos antes de enviar
-            if (!this.checkValidity()) {
-               e.preventDefault();
-               this.reportValidity();
-               return;
-            }
-
-            // El formulario se enviará automáticamente por mailto:
-            // No necesitamos preventDefault() aquí
-
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-
-            // Mostrar feedback visual
-            submitBtn.innerHTML = '<i class="fas fa-check"></i> Abriendo cliente de correo...';
-            submitBtn.style.background = 'linear-gradient(135deg, #27ae60, #2ecc71)';
-
-            // Restaurar botón después de un momento
-            setTimeout(() => {
-               submitBtn.innerHTML = originalText;
-               submitBtn.style.background = 'linear-gradient(135deg, #3498db, #2980b9)';
-            }, 3000);
-         });
-
-         // Animación de entrada para elementos
+         // Animación al hacer scroll (para elementos con clase .info_item)
          const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                if (entry.isIntersecting) {
@@ -1054,7 +1015,65 @@
             observer.observe(el);
          });
       });
+
+      // Función principal de envío
+      function enviarCorreo() {
+         const form = document.getElementById('formContacto');
+         if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+         }
+
+         const nombre = document.getElementById('nombre').value.trim();
+         const telefono = document.getElementById('telefono').value.trim();
+         const correo = document.getElementById('correo').value.trim();
+         const mensaje = document.getElementById('mensaje').value.trim();
+
+         const asuntos = [];
+         document.querySelectorAll('#asuntoGroup input[type="checkbox"]:checked').forEach(cb => {
+            asuntos.push(cb.value);
+         });
+
+         if (asuntos.length === 0) {
+            alert('Debes seleccionar al menos un tema de consulta.');
+            return;
+         }
+
+         const cuerpo = `
+         Estimado equipo WEKE,
+
+         Ha recibido una nueva solicitud desde el formulario de contacto:
+
+         Nombre: ${nombre}
+         Teléfono: ${telefono}
+         Email: ${correo}
+
+         Asunto(s) de consulta:
+         - ${asuntos.join('\n- ')}
+
+         Mensaje:
+         ${mensaje}
+
+         Saludos,
+         Formulario WEKE`.trim();
+
+         const mailto = `mailto:contacto@wekeoutdoor.cl?subject=Consulta desde formulario WEKE&body=${encodeURIComponent(cuerpo)}`;
+
+         const submitBtn = form.querySelector('button[type="submit"]');
+         const originalText = submitBtn.innerHTML;
+
+         // Feedback visual
+         submitBtn.innerHTML = '<i class="fas fa-check"></i> Abriendo cliente de correo...';
+         submitBtn.style.background = 'linear-gradient(135deg, #27ae60, #2ecc71)';
+
+         setTimeout(() => {
+            submitBtn.innerHTML = originalText;
+            submitBtn.style.background = 'linear-gradient(135deg, #3498db, #2980b9)';
+            window.location.href = mailto;
+         }, 800);
+      }
    </script>
+
 </body>
 
 </html>
