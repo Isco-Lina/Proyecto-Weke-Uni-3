@@ -10,7 +10,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
    <!-- site metas -->
-   <title>Services</title>
+   <title>Productos</title>
    <meta name="keywords" content="">
    <meta name="description" content="">
    <meta name="author" content="">
@@ -34,30 +34,197 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
       media="screen">
 
-   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
-
+   <!-- Libreria isotope.js -->
    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-   <script src="https://unpkg.com/desandro-matches-selector@2/matches-selector.js"></script>
 
    <style>
-      .featured-page {
-         margin-top: 140px !important;
+      /* === Tarjetas de Producto === */
+      .producto-item {
+         padding: 15px;
+         display: flex;
       }
 
-      .featured-page h1,
-      .featured-item h4,
-      .featured-item h6,
-      #filtros-productos .btn-filtro {
-         font-family: 'Poppins', sans-serif !important;
+      /* Sistema de grilla con Bootstrap */
+      .row.posts {
+         row-gap: 30px;
+         column-gap: 0px;
       }
 
-      @media (max-width: 768px) {
-         .featured-page {
-            margin-top: 0px !important;
+      /* Tarjeta */
+      .featured-item {
+         background-color: #ffffff;
+         border-radius: 16px;
+         overflow: hidden;
+         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+         transition: transform 0.3s ease, box-shadow 0.3s ease;
+         text-align: center;
+         padding: 10px;
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+         height: 100%;
+      }
+
+      /* Imagen */
+      .featured-item img {
+         width: 100%;
+         height: auto;
+         object-fit: cover;
+         border-radius: 8px;
+         transition: transform 0.3s ease;
+      }
+
+      /* Hover */
+      .featured-item:hover {
+         transform: translateY(-6px);
+         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .featured-item:hover h4 {
+         color: #295F9E;
+      }
+
+      /* Texto */
+      .featured-item h4 {
+         font-size: 1rem;
+         margin: 12px 0 4px;
+         font-weight: 600;
+         color: #2B2B2B;
+         transition: color 0.3s;
+      }
+
+      .featured-item h6.precio-producto {
+         font-size: 0.95rem;
+         color: #295F9E;
+         font-weight: bold;
+         margin-bottom: 0;
+      }
+
+      /* === Estilo de Filtros === */
+      #filtros-productos {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+         gap: 15px;
+         margin-top: 20px;
+         padding: 30px 0;
+      }
+
+      .btn-filtro {
+         background-color: transparent;
+         border: none;
+         font-weight: 600;
+         font-size: 15px;
+         color: #2B2B2B;
+         padding: 8px 12px;
+         cursor: pointer;
+         border-bottom: 2px solid transparent;
+         transition: all 0.3s ease;
+      }
+
+      .btn-filtro:hover {
+         color: #295F9E;
+         border-color: #295F9E;
+      }
+
+      .btn-filtro.active {
+         color: #295F9E;
+         border-color: #295F9E;
+      }
+
+      /* === Responsive Filtros === */
+      @media screen and (max-width: 768px) {
+         #filtros-productos {
+            gap: 10px;
+            padding: 15px 0;
+         }
+
+         .btn-filtro {
+            font-size: 14px;
          }
       }
+
+      /* === Modal Producto === */
+      .custom-modal {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background: rgba(43, 43, 43, 0.6);
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         z-index: 9999;
+         padding: 20px;
+         backdrop-filter: blur(5px);
+      }
+
+      .modal-contenido {
+         background-color: #fff;
+         border-radius: 16px;
+         max-width: 480px;
+         width: 100%;
+         padding: 30px 24px;
+         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+         position: relative;
+         font-family: 'Poppins', sans-serif;
+         animation: modalFadeIn 0.3s ease-out;
+         text-align: left;
+      }
+
+      @keyframes modalFadeIn {
+         from {
+            opacity: 0;
+            transform: scale(0.95);
+         }
+
+         to {
+            opacity: 1;
+            transform: scale(1);
+         }
+      }
+
+      .modal-contenido h2 {
+         font-size: 1.4rem;
+         margin-bottom: 10px;
+         color: #2B2B2B;
+      }
+
+      .modal-contenido p {
+         font-size: 1rem;
+         color: #5A5A5A;
+         line-height: 1.5;
+      }
+
+      /* === Botón cerrar modal === */
+      .btn-cerrar {
+         position: absolute;
+         top: 12px;
+         right: 12px;
+         width: 36px;
+         height: 36px;
+         font-size: 1.5rem;
+         font-weight: bold;
+         color: #777;
+         background: none;
+         border: none;
+         cursor: pointer;
+         transition: background-color 0.2s ease, color 0.2s ease;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         border-radius: 50%;
+      }
+
+      .btn-cerrar:hover {
+         background-color: #f2f2f2;
+         color: #000;
+      }
    </style>
+
+
 
 </head>
 
@@ -84,7 +251,7 @@
                         <a class="nav-link" href="services.html">Productos</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link " href="contact.html">Contacto</a>
+                        <a class="nav-link active" href="contact.html">Contacto</a>
                      </li>
                   </ul>
                </div>
@@ -94,30 +261,19 @@
             <div class="logo"><a href="index.html"><img src="images/weke/inicio/logo-weke2.png"></a></div>
             <div class="menu_main">
                <ul>
-                  <li class="active"><a href="index.html">Inicio</a></li>
+                  <li><a href="index.html">Inicio</a></li>
                   <li><a href="about.html">Nosotros</a></li>
                   <li><a href="services.html">Productos</a></li>
-                  <li><a href="contact.html">Contacto</a></li>
+                  <li class="active"><a href="contact.html">Contacto</a></li>
                </ul>
             </div>
          </div>
       </div>
    </div>
    <!-- header section end -->
-   <!-- services section start -->
 
-
-
-
-   <!-- Separador para compensar el header fijo -->
-   <div style="height: 140px;"></div>
-
-
-
-
-
-   <!-- Productos Destacados -->
-   <div class="featured-page">
+   <!-- Sección de Filtros -->
+   <div class="services_section layout_padding" style="padding: 0px;">
       <div class="container">
          <div class="row">
             <div class="col-md-4 col-sm-12">
@@ -125,7 +281,6 @@
                   <div class="line-dec"></div>
                   <h1><strong>Productos Destacados</strong></h1>
                </div>
-
             </div>
             <div class="col-md-8 col-sm-12">
                <div id="filtros-productos">
@@ -135,18 +290,17 @@
                   <button class="btn-filtro" data-filter=".infantil">Línea Infantil</button>
                   <button class="btn-filtro" data-filter=".accesorios">Accesorios</button>
                   <button class="btn-filtro" data-filter=".inclusivo">Inclusivo</button>
-                  <!-- <button class="btn-filtro" data-filter="*">Todos</button> -->
                </div>
             </div>
          </div>
       </div>
    </div>
-
+   <!-- Productos Destacados -->
    <div class="featured container no-gutter">
       <div class="row posts">
 
          <!-- Infantil -->
-         <div class="item infantil col-md-4">
+         <div class="producto-item infantil col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Polera niños azul', 'Polera azul de manga corta para niños, cómoda y ligera. Ideal para actividades al aire libre. Disponible en tallas infantiles.')">
                <div class="featured-item">
@@ -157,8 +311,7 @@
                </div>
             </a>
          </div>
-
-         <div class="item infantil col-md-4">
+         <div class="producto-item infantil col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Polerón niños Iquide', 'Polerón deportivo para niños, color Iquide. Tela respirable y cómoda. Disponible en tallas infantiles.')">
                <div class="featured-item">
@@ -170,7 +323,7 @@
             </a>
          </div>
 
-         <div class="item infantil col-md-4">
+         <div class="producto-item infantil col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Polera niños celeste', 'Polera tipo isla de manga corta para niños, color celeste. Cómoda, ligera y fresca. Tallas infantiles disponibles.')">
                <div class="featured-item">
@@ -182,7 +335,7 @@
             </a>
          </div>
 
-         <div class="item infantil col-md-4">
+         <div class="producto-item infantil col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Polerón niños Pinque', 'Polerón infantil color Pinque, confeccionado con tela respirable. Ideal para días fríos. Tallas infantiles disponibles.')">
                <div class="featured-item">
@@ -194,7 +347,7 @@
             </a>
          </div>
 
-         <div class="item infantil col-md-4">
+         <div class="producto-item infantil col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Polerón niños Quilquil', 'Polerón para niño color Quilquil, diseñado para libertad de movimiento durante juegos y deportes. Disponible en tallas infantiles.')">
                <div class="featured-item">
@@ -207,7 +360,7 @@
          </div>
 
          <!-- Primera Capa -->
-         <div class="item primera col-md-4">
+         <div class="producto-item primera col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Camisa técnica Aspillaga Hombre', 'Camisa outdoor de manga larga para hombre. Liviana, respirable y de secado rápido. Ideal para caminatas y media estación.')">
                <div class="featured-item">
@@ -219,7 +372,7 @@
             </a>
          </div>
 
-         <div class="item primera col-md-4">
+         <div class="producto-item primera col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Calza técnica Evernia Base Hombre', 'Calza térmica de ajuste ergonómico para hombre. Excelente aislamiento térmico como primera capa en climas fríos.')">
                <div class="featured-item">
@@ -231,7 +384,7 @@
             </a>
          </div>
 
-         <div class="item primera col-md-4">
+         <div class="producto-item primera col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Camiseta técnica Evernia Top Hombre', 'Camiseta térmica para hombre, de manga larga y costuras planas. Ideal como primera capa para actividades al aire libre.')">
                <div class="featured-item">
@@ -243,7 +396,7 @@
             </a>
          </div>
 
-         <div class="item primera col-md-4">
+         <div class="producto-item primera col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Calza técnica Xantoria Base Hombre', 'Calza térmica de alta elasticidad y abrigo para hombre. Especial para trekking o montaña.')">
                <div class="featured-item">
@@ -255,7 +408,7 @@
             </a>
          </div>
 
-         <div class="item primera col-md-4">
+         <div class="producto-item primera col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Camiseta técnica Xantoria Top Hombre', 'Primera capa de alto rendimiento, con excelente control térmico y transpirabilidad. Ideal para deportes.')">
                <div class="featured-item">
@@ -267,7 +420,7 @@
             </a>
          </div>
 
-         <div class="item primera col-md-4">
+         <div class="producto-item primera col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Camisa técnica Aspillaga Mujer', 'Camisa outdoor de secado rápido con corte femenino y protección solar. Perfecta para salidas de campo.')">
                <div class="featured-item">
@@ -279,7 +432,7 @@
             </a>
          </div>
 
-         <div class="item primera col-md-4">
+         <div class="producto-item primera col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Camiseta técnica Evernia Top Mujer', 'Primera capa ajustada con gran elasticidad y confort térmico. Ideal para bajas temperaturas.')">
                <div class="featured-item">
@@ -291,7 +444,7 @@
             </a>
          </div>
 
-         <div class="item primera col-md-4">
+         <div class="producto-item primera col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Polera sin manga técnica Sora Mujer', 'Polera sin mangas, fresca y respirable. Perfecta para días calurosos o entrenamiento indoor.')">
                <div class="featured-item">
@@ -303,7 +456,7 @@
             </a>
          </div>
 
-         <div class="item primera col-md-4">
+         <div class="producto-item primera col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Calza técnica Xantoria Base Mujer', 'Calza térmica suave y ergonómica para mujer. Diseñada para actividades outdoor en climas fríos.')">
                <div class="featured-item">
@@ -315,7 +468,7 @@
             </a>
          </div>
 
-         <div class="item primera col-md-4">
+         <div class="producto-item primera col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Camiseta técnica Xantoria Top Mujer', 'Primera capa de rendimiento con retención térmica y movilidad. Corte ajustado y femenino.')">
                <div class="featured-item">
@@ -328,8 +481,7 @@
          </div>
 
          <!-- Segunda Capa -->
-
-         <div class="item segunda col-md-4">
+         <div class="producto-item segunda col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Pantalón técnico Chilca', 'Pantalón térmico elasticado con cintura alta y suave interior afelpado. Diseñado para proteger del frío en travesías de media montaña.')">
                <div class="featured-item">
@@ -341,7 +493,7 @@
             </a>
          </div>
 
-         <div class="item segunda col-md-4">
+         <div class="producto-item segunda col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Polerón técnico Corcolén', 'Polerón con cuello alto y cierre medio, ideal como segunda capa térmica. Interior afelpado y exterior liso para mayor abrigo y movilidad.')">
                <div class="featured-item">
@@ -353,7 +505,7 @@
             </a>
          </div>
 
-         <div class="item segunda col-md-4">
+         <div class="producto-item segunda col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Pantalón térmico Maqui', 'Pantalón polar técnico ideal como segunda capa, con gran aislación térmica. Perfecto para caminatas frías o uso urbano.')">
                <div class="featured-item">
@@ -365,7 +517,7 @@
             </a>
          </div>
 
-         <div class="item segunda col-md-4">
+         <div class="producto-item segunda col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Polerón térmico Adesmia Crudo', 'Polerón de suave polar reciclado, cuello alto y corte entallado. Ideal como segunda capa para mujeres.')">
                <div class="featured-item">
@@ -377,7 +529,7 @@
             </a>
          </div>
 
-         <div class="item segunda col-md-4">
+         <div class="producto-item segunda col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Polerón térmico Adesmia Naranjo', 'Diseñado para ofrecer confort y abrigo, este polerón combina diseño outdoor y estilo urbano. Color naranjo con textura aterciopelada.')">
                <div class="featured-item">
@@ -389,7 +541,7 @@
             </a>
          </div>
 
-         <div class="item segunda col-md-4">
+         <div class="producto-item segunda col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Polerón térmico Adesmia Verde', 'Segunda capa térmica de polar reciclado, ideal para trekking o uso cotidiano. Interior afelpado y corte relajado.')">
                <div class="featured-item">
@@ -401,7 +553,7 @@
             </a>
          </div>
 
-         <div class="item segunda col-md-4">
+         <div class="producto-item segunda col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Polerón con gorro Berberis', 'Polerón técnico con gorro ajustable y bolsillo canguro. Cálido, cómodo y versátil para cualquier tipo de salida.')">
                <div class="featured-item">
@@ -414,7 +566,7 @@
          </div>
 
          <!-- Tercera Capa -->
-         <div class="item tercera col-md-4">
+         <div class="producto-item tercera col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Chaqueta técnica Acacio Hombre', 'Chaqueta térmica para hombre con diseño técnico y versátil, ideal para climas fríos. Disponible en tallas S a XL.')">
                <div class="featured-item">
@@ -425,7 +577,7 @@
             </a>
          </div>
 
-         <div class="item tercera col-md-4">
+         <div class="producto-item tercera col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Chaqueta técnica Belloto Hombre', 'Chaqueta térmica para hombre con cierre completo, bolsillos y gorro. Ideal para climas fríos. Disponible en tallas S a XL.')">
                <div class="featured-item">
@@ -437,7 +589,7 @@
             </a>
          </div>
 
-         <div class="item tercera col-md-4">
+         <div class="producto-item tercera col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Chaqueta con gorro Chañar Hombre', 'Chaqueta térmica con gorro, especial para outdoor. Protección térmica y comodidad. Disponible en tallas S a XL.')">
                <div class="featured-item">
@@ -449,7 +601,7 @@
             </a>
          </div>
 
-         <div class="item tercera col-md-4">
+         <div class="producto-item tercera col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Chaqueta con gorro Ciprés Hombre', 'Chaqueta térmica outdoor con gorro integrado. Protección contra el viento y frío. Disponible en tallas S a XL.')">
                <div class="featured-item">
@@ -461,7 +613,7 @@
             </a>
          </div>
 
-         <div class="item tercera col-md-4">
+         <div class="producto-item tercera col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Chaqueta con gorro Notro Hombre', 'Chaqueta térmica con gorro para climas fríos. Ideal para actividades al aire libre. Disponible en tallas S a XL.')">
                <div class="featured-item">
@@ -473,7 +625,7 @@
             </a>
          </div>
 
-         <div class="item tercera col-md-4">
+         <div class="producto-item tercera col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Chaqueta técnica Pircún Hombre', 'Chaqueta técnica térmica para uso diario o excursiones. Diseño resistente y cómodo. Disponible en tallas S a XL.')">
                <div class="featured-item">
@@ -484,7 +636,7 @@
             </a>
          </div>
 
-         <div class="item tercera col-md-4">
+         <div class="producto-item tercera col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Chaqueta con gorro Chañar Mujer', 'Chaqueta térmica para mujer con gorro, ideal para el frío. Ajuste cómodo. Disponible en tallas S a XL.')">
                <div class="featured-item">
@@ -496,7 +648,7 @@
             </a>
          </div>
 
-         <div class="item tercera col-md-4">
+         <div class="producto-item tercera col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Chaqueta con gorro Guindo Mujer', 'Chaqueta outdoor para mujer con gorro, calce femenino, térmica y cómoda. Disponible en tallas S a XL.')">
                <div class="featured-item">
@@ -508,7 +660,7 @@
             </a>
          </div>
 
-         <div class="item tercera col-md-4">
+         <div class="producto-item tercera col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Chaqueta técnica Manzano Mujer', 'Chaqueta térmica sin gorro, ideal para uso urbano y outdoor. Disponible en tallas S a XL.')">
                <div class="featured-item">
@@ -518,7 +670,7 @@
                </div>
             </a>
          </div>
-         <div class="item tercera col-md-4">
+         <div class="producto-item tercera col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Chaqueta con gorro Meli Mujer', 'Chaqueta térmica outdoor con gorro. Ajuste cómodo, ideal para climas fríos. Disponible en tallas S a XL.')">
                <div class="featured-item">
@@ -530,7 +682,7 @@
             </a>
          </div>
 
-         <div class="item tercera col-md-4">
+         <div class="producto-item tercera col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Chaqueta con gorro Notro Mujer', 'Chaqueta técnica térmica con gorro. Ideal para uso outdoor en bajas temperaturas. Disponible en tallas S a XL.')">
                <div class="featured-item">
@@ -542,7 +694,7 @@
             </a>
          </div>
 
-         <div class="item tercera col-md-4">
+         <div class="producto-item tercera col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Chaqueta con gorro Patagua Mujer', 'Chaqueta térmica para mujer con gorro. Diseño moderno y cálido. Disponible en tallas S a XL.')">
                <div class="featured-item">
@@ -554,7 +706,7 @@
             </a>
          </div>
 
-         <div class="item tercera col-md-4">
+         <div class="producto-item tercera col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Chaqueta técnica Pircún Mujer', 'Chaqueta térmica sin gorro para mujer. Ideal para uso urbano y de montaña. Disponible en tallas S a XL.')">
                <div class="featured-item">
@@ -565,7 +717,7 @@
             </a>
          </div>
 
-         <div class="item tercera col-md-4">
+         <div class="producto-item tercera col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Chaqueta con gorro Temu Mujer', 'Chaqueta térmica para mujer con gorro integrado. Diseño ergonómico y abrigado. Disponible en tallas S a XL.')">
                <div class="featured-item">
@@ -577,7 +729,7 @@
             </a>
          </div>
 
-         <div class="item tercera col-md-4">
+         <div class="producto-item tercera col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Chaqueta larga con gorro Ulmo Mujer', 'Chaqueta térmica larga para mujer, con gorro ajustable. Alta protección contra el frío. Disponible en tallas S a XL.')">
                <div class="featured-item">
@@ -589,7 +741,7 @@
             </a>
          </div>
 
-         <div class="item tercera col-md-4">
+         <div class="producto-item tercera col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Chaqueta con gorro Ulmo Mujer - Modelo 2', 'Chaqueta térmica para mujer con diseño alternativo. Gorro integrado y máxima comodidad. Disponible en tallas S a XL.')">
                <div class="featured-item">
@@ -601,7 +753,7 @@
             </a>
          </div>
 
-         <div class="item tercera col-md-4">
+         <div class="producto-item tercera col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Buzo térmico Peumo', 'Buzo térmico completo, ideal para deportes outdoor en invierno. Disponible en tallas S a XL.')">
                <div class="featured-item">
@@ -612,7 +764,7 @@
             </a>
          </div>
 
-         <div class="item tercera col-md-4">
+         <div class="producto-item tercera col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Buzo térmico Tiaca', 'Buzo técnico térmico para protección total en condiciones extremas. Diseño ergonómico. Disponible en tallas S a XL.')">
                <div class="featured-item">
@@ -624,7 +776,7 @@
          </div>
 
          <!-- Accesorios -->
-         <div class="item accesorios col-md-4">
+         <div class="producto-item accesorios col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Banano Lahuén', 'Banano color azul, liviano y ajustable. Ideal para caminatas y salidas outdoor.')">
                <div class="featured-item">
@@ -635,7 +787,7 @@
             </a>
          </div>
 
-         <div class="item accesorios col-md-4">
+         <div class="producto-item accesorios col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Banano Lahuén lateral', 'Vista lateral del banano azul Lahuén, con múltiples bolsillos.')">
                <div class="featured-item">
@@ -647,7 +799,7 @@
             </a>
          </div>
 
-         <div class="item accesorios col-md-4">
+         <div class="producto-item accesorios col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Gorro Liuto', 'Gorro térmico Liuto, suave y cómodo para climas fríos.')">
                <div class="featured-item">
@@ -658,7 +810,7 @@
             </a>
          </div>
 
-         <div class="item accesorios col-md-4">
+         <div class="producto-item accesorios col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Gorro Liuto vista lateral', 'Vista lateral del gorro térmico Liuto. Diseño ergonómico.')">
                <div class="featured-item">
@@ -670,7 +822,7 @@
             </a>
          </div>
 
-         <div class="item accesorios col-md-4">
+         <div class="producto-item accesorios col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Gorro Llaretilla', 'Gorro de abrigo Llaretilla, ideal para condiciones extremas.')">
                <div class="featured-item">
@@ -682,7 +834,7 @@
             </a>
          </div>
 
-         <div class="item accesorios col-md-4">
+         <div class="producto-item accesorios col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Gorro Michay', 'Gorro térmico Michay, cálido y adaptable. Perfecto para días fríos.')">
                <div class="featured-item">
@@ -693,7 +845,7 @@
             </a>
          </div>
 
-         <div class="item accesorios col-md-4">
+         <div class="producto-item accesorios col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Gorro Trique', 'Gorro térmico Trique, tejido denso para máxima retención de calor.')">
                <div class="featured-item">
@@ -704,7 +856,7 @@
             </a>
          </div>
 
-         <div class="item accesorios col-md-4">
+         <div class="producto-item accesorios col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Mochila M30 Quintral', 'Mochila outdoor de 30L, resistente al agua, ideal para excursiones.')">
                <div class="featured-item">
@@ -716,7 +868,7 @@
             </a>
          </div>
 
-         <div class="item accesorios col-md-4">
+         <div class="producto-item accesorios col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Mochila M30 Quintral', 'Vista lateral de la mochila M30 Quintral, bolsillos laterales y ajuste ergonómico.')">
                <div class="featured-item">
@@ -728,7 +880,7 @@
             </a>
          </div>
 
-         <div class="item accesorios col-md-4">
+         <div class="producto-item accesorios col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Mochila M30 Quintral', 'Vista posterior de la mochila M30 Quintral, con refuerzos acolchados.')">
                <div class="featured-item">
@@ -740,7 +892,7 @@
             </a>
          </div>
 
-         <div class="item accesorios col-md-4">
+         <div class="producto-item accesorios col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Mochila M30 Quintral', 'Detalle adicional del diseño funcional de la mochila M30 Quintral.')">
                <div class="featured-item">
@@ -752,7 +904,7 @@
             </a>
          </div>
 
-         <div class="item accesorios col-md-4">
+         <div class="producto-item accesorios col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Mochila M70 Huingan', 'Mochila técnica de 70L, ideal para travesías largas, resistente y ergonómica.')">
                <div class="featured-item">
@@ -764,7 +916,7 @@
             </a>
          </div>
 
-         <div class="item accesorios col-md-4">
+         <div class="producto-item accesorios col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Mochila M70 Huingan', 'Vista lateral de la mochila M70 Huingan con soporte lumbar.')">
                <div class="featured-item">
@@ -776,7 +928,7 @@
             </a>
          </div>
 
-         <div class="item accesorios col-md-4">
+         <div class="producto-item accesorios col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Mitones Chagual', 'Mitones térmicos Chagual, flexibles y cálidos para invierno.')">
                <div class="featured-item">
@@ -788,7 +940,7 @@
             </a>
          </div>
 
-         <div class="item accesorios col-md-4">
+         <div class="producto-item accesorios col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Mitones Chagual', 'Vista lateral de los mitones Chagual con ajuste elástico.')">
                <div class="featured-item">
@@ -800,7 +952,7 @@
             </a>
          </div>
 
-         <div class="item accesorios col-md-4">
+         <div class="producto-item accesorios col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Polaina Drosera', 'Polainas térmicas Drosera para proteger piernas del frío y humedad.')">
                <div class="featured-item">
@@ -812,7 +964,7 @@
             </a>
          </div>
 
-         <div class="item accesorios col-md-4">
+         <div class="producto-item accesorios col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Polaina Drosera', 'Vista lateral de polainas Drosera, con ajuste en talón.')">
                <div class="featured-item">
@@ -824,7 +976,7 @@
             </a>
          </div>
 
-         <div class="item accesorios col-md-4">
+         <div class="producto-item accesorios col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Saco dormir Philesia', 'Saco de dormir térmico Philesia, compacto y liviano, para climas fríos.')">
                <div class="featured-item">
@@ -836,7 +988,7 @@
          </div>
 
          <!-- Inclusivo -->
-         <div class="item inclusivo col-md-4">
+         <div class="producto-item inclusivo col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Polera térmica', 'Polera térmica unisex, ideal como primera capa. Disponible en tallas S a XL.')">
                <div class="featured-item">
@@ -847,7 +999,7 @@
             </a>
          </div>
 
-         <div class="item inclusivo col-md-4">
+         <div class="producto-item inclusivo col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Polera térmica', 'Polera térmica unisex, ideal como primera capa. Disponible en tallas S a XL.')">
                <div class="featured-item">
@@ -858,7 +1010,7 @@
             </a>
          </div>
 
-         <div class="item inclusivo col-md-4">
+         <div class="producto-item inclusivo col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Polera térmica', 'Polera térmica unisex, ideal como primera capa. Disponible en tallas S a XL.')">
                <div class="featured-item">
@@ -869,7 +1021,7 @@
             </a>
          </div>
 
-         <div class="item inclusivo col-md-4">
+         <div class="producto-item inclusivo col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Polera térmica', 'Polera térmica unisex, ideal como primera capa. Disponible en tallas S a XL.')">
                <div class="featured-item">
@@ -880,7 +1032,7 @@
             </a>
          </div>
 
-         <div class="item inclusivo col-md-4">
+         <div class="producto-item inclusivo col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Polera térmica', 'Polera térmica unisex, ideal como primera capa. Disponible en tallas S a XL.')">
                <div class="featured-item">
@@ -891,7 +1043,7 @@
             </a>
          </div>
 
-         <div class="item inclusivo col-md-4">
+         <div class="producto-item inclusivo col-md-4">
             <a href="javascript:void(0);"
                onclick="abrirModal('Polera térmica', 'Polera térmica unisex, ideal como primera capa. Disponible en tallas S a XL.')">
                <div class="featured-item">
@@ -902,11 +1054,12 @@
             </a>
          </div>
 
-         <!-- ...continúa con el resto de los productos... -->
+         <!-- ...continúar con el resto de los productos... -->
 
       </div>
    </div>
 
+   <!-- footer section start -->
    <div class="footer_section layout_padding">
       <div class="container">
          <div class="location_main">
@@ -954,17 +1107,27 @@
    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 
    <!-- Modal Producto -->
-
    <div id="modalProducto" class="custom-modal" style="display: none;">
       <div class="modal-contenido">
-         <button class="btn-cerrar" onclick="cerrarModal()">×</button>
+         <button class="btn-cerrar" onclick="cerrarModal()">X</button>
          <h2 id="modalTitulo">Título del producto</h2>
          <p id="modalDescripcion">Descripción del producto</p>
       </div>
    </div>
 
-   <!-- Código para cerrar al hacer clic fuera -->
    <script>
+      // ========== MODAL ==========
+      function abrirModal(titulo, descripcion) {
+         document.getElementById("modalTitulo").innerText = titulo;
+         document.getElementById("modalDescripcion").innerText = descripcion;
+         document.getElementById("modalProducto").style.display = "flex";
+      }
+
+      function cerrarModal() {
+         document.getElementById("modalProducto").style.display = "none";
+      }
+
+      // Cerrar al hacer clic fuera del contenido
       window.addEventListener('click', function (e) {
          const modal = document.querySelector('.custom-modal');
          const contenido = document.querySelector('.modal-contenido');
@@ -972,53 +1135,32 @@
             cerrarModal();
          }
       });
+
+      // ========== FILTRO DE PRODUCTOS ==========
+      document.addEventListener("DOMContentLoaded", function () {
+         const grid = document.querySelector('.posts');
+
+         if (grid) {
+            const iso = new Isotope(grid, {
+               itemSelector: '.producto-item',
+               layoutMode: 'fitRows',
+               filter: '.primera'
+            });
+
+            const filtros = document.getElementById('filtros-productos');
+            filtros.addEventListener('click', function (event) {
+               if (event.target.tagName !== 'BUTTON') return;
+
+               document.querySelectorAll('.btn-filtro').forEach(b => b.classList.remove('active'));
+               event.target.classList.add('active');
+
+               const filtro = event.target.getAttribute('data-filter');
+               iso.arrange({ filter: filtro });
+            });
+         }
+      });
    </script>
 
 </body>
-
-
-<script>
-   document.addEventListener("DOMContentLoaded", function () {
-      var grid = document.querySelector('.posts');
-      if (grid) {
-         var iso = new Isotope(grid, {
-            itemSelector: '.item',
-            layoutMode: 'fitRows',
-            filter: '.primera'
-         });
-
-         // usar ID correcto
-         var filtersElem = document.querySelector('#filtros-productos');
-         filtersElem.addEventListener('click', function (event) {
-            if (event.target.tagName !== 'BUTTON') return;
-
-            // Activar botón actual
-            document.querySelectorAll('.btn-filtro').forEach(function (btn) {
-               btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-
-            // Filtro
-            var filterValue = event.target.getAttribute('data-filter');
-            iso.arrange({ filter: filterValue });
-         });
-      }
-   });
-</script>
-
-<script>
-   function abrirModal(titulo, descripcion) {
-      document.getElementById("modalTitulo").innerText = titulo;
-      document.getElementById("modalDescripcion").innerText = descripcion;
-      document.getElementById("modalProducto").style.display = "flex";
-   }
-
-   function cerrarModal() {
-      document.getElementById("modalProducto").style.display = "none";
-   }
-
-</script>
-
-
 
 </html>
