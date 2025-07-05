@@ -363,6 +363,20 @@
          margin-top: 30px;
       }
 
+      .send_btn button {
+         padding: 12px 24px;
+         font-size: 1rem;
+         border-radius: 30px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         gap: 10px;
+         width: 100%;
+         max-width: 300px;
+         margin: 0 auto;
+         overflow: visible;
+      }
+
       .btn-primary {
          background: linear-gradient(135deg, #3498db, #2980b9);
          border: none;
@@ -724,7 +738,7 @@
                         <a class="nav-link" href="services.html">Productos</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link active" href="contact.html">Contacto</a>
+                        <a class="nav-link" href="contact.html">Contacto</a>
                      </li>
                   </ul>
                </div>
@@ -737,7 +751,7 @@
                   <li><a href="index.html">Inicio</a></li>
                   <li><a href="about.html">Nosotros</a></li>
                   <li><a href="services.html">Productos</a></li>
-                  <li class="active"><a href="contact.html">Contacto</a></li>
+                  <li><a href="contact.html">Contacto</a></li>
                </ul>
             </div>
          </div>
@@ -884,6 +898,7 @@
                   <div class="send_btn">
                      <button type="submit" class="btn btn-primary">
                         <i class="fas fa-paper-plane"></i> Enviar Solicitud
+                     </button>
                      </button>
                   </div>
                </form>
@@ -1040,22 +1055,23 @@
          }
 
          const cuerpo = `
-         Estimado equipo WEKE,
+Estimado equipo WEKE,
 
-         Ha recibido una nueva solicitud desde el formulario de contacto:
+Ha recibido una nueva solicitud desde el formulario de contacto:
 
-         Nombre: ${nombre}
-         Teléfono: ${telefono}
-         Email: ${correo}
+Nombre: ${nombre}
+Teléfono: ${telefono}
+Email: ${correo}
 
-         Asunto(s) de consulta:
-         - ${asuntos.join('\n- ')}
+Asunto(s) de consulta:
+- ${asuntos.join('\n- ')}
 
-         Mensaje:
-         ${mensaje}
+Mensaje:
+${mensaje}
 
-         Saludos,
-         Formulario WEKE`.trim();
+Saludos,
+Formulario WEKE
+      `.trim();
 
          const mailto = `mailto:contacto@wekeoutdoor.cl?subject=Consulta desde formulario WEKE&body=${encodeURIComponent(cuerpo)}`;
 
