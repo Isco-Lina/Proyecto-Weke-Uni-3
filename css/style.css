@@ -543,7 +543,7 @@ button {
   .about_text {
     font-size: 16px;
     line-height: 1.8;
-    text-align: justify;
+    text-align: center; /* texto centrado */
     padding: 0 10px;
     margin-bottom: 25px;
   }
