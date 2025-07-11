@@ -406,6 +406,7 @@ button {
 }
 
 .services_taital {
+    text-align: center;
     width: 100%;
     float: left;
     font-size: 40px;
@@ -414,6 +415,7 @@ button {
 }
 
 .services_text {
+    text-align: center;
     width: 100%;
     float: left;
     font-size: 16px;
@@ -562,8 +564,8 @@ button {
   }
 
   .readmore_bt a {
-    font-size: 22px;
-    padding: 14px 50px;
+    /* font-size: 22px;
+    padding: 14px 50px; */
     border-radius: 45px;
   }
 
