@@ -288,7 +288,7 @@
         display: none;
     }
     .header_section {
-        background-image: url(../images/mobile-bg.png);
+        background-image: url(../images/weke/inicio/start.png);
         background-size: cover;
         padding: 0px;
     }
@@ -319,7 +319,7 @@
         padding: 0px;
     }
     .navbar-expand-lg .navbar-nav .nav-link {
-        color: #ffffff;
+        color: #111;
         text-align: center;
         background: transparent;
         width: 100%;
@@ -486,7 +486,7 @@
         display: none;
     }
     .header_section {
-        background-image: url(../images/mobile-bg.png);
+        background-image: url(../images/weke/inicio/start.png);
         background-size: cover;
         padding: 0px; 
     }
@@ -516,7 +516,7 @@
         padding: 0px;
     }
     .navbar-expand-lg .navbar-nav .nav-link {
-        color: #ffffff;
+        color: #111;
         text-align: center;
         background: transparent;
         width: 100%;
@@ -665,4 +665,35 @@
         padding-top: 90px;
     }
 
+}
+
+/* === Ajustes personalizados para carrusel en móviles === */
+@media (max-width: 768px) {
+   .banner_taital {
+      font-size: 26px !important;       /* Tamaño reducido */
+      line-height: 1.2;
+      color: #111 !important;           /* Negro para legibilidad */
+      text-align: center;
+      text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6);  /* Contraste sobre fondo */
+      padding: 10px 15px;
+   }
+
+   .banner_text {
+      font-size: 14px !important;
+      color: #111 !important;
+      text-align: center;
+      text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+      padding: 0 20px;
+   }
+
+   .carousel-item .container {
+      padding: 15px;
+   }
+
+   /* Opcional: mejora de flechas de navegación en móvil */
+   .carousel-control-prev-icon,
+   .carousel-control-next-icon {
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+   }
 }
