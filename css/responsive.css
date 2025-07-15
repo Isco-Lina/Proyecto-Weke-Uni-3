@@ -322,6 +322,7 @@
         color: #111;
         text-align: center;
         background: transparent;
+        font-weight: bold;
         width: 100%;
         margin: 10px 0px;
         border-radius: 30px;
@@ -518,6 +519,7 @@
     .navbar-expand-lg .navbar-nav .nav-link {
         color: #111;
         text-align: center;
+        font-weight: bold;
         background: transparent;
         width: 100%;
         margin: 10px 0px;
@@ -670,19 +672,21 @@
 /* === Ajustes personalizados para carrusel en móviles === */
 @media (max-width: 768px) {
    .banner_taital {
-      font-size: 26px !important;       /* Tamaño reducido */
+      font-size: 26px !important;    
+      font-weight: bold;   
       line-height: 1.2;
-      color: #111 !important;           /* Negro para legibilidad */
+      color: #ffffff !important;          
       text-align: center;
-      text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6);  /* Contraste sobre fondo */
+      text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);  
       padding: 10px 15px;
    }
 
    .banner_text {
       font-size: 14px !important;
       color: #ffffff !important;
+      font-weight: bold;   
       text-align: center;
-    text-shadow: 3px 3px 5px rgba(6, 4, 98, 0.933);
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
       padding: 0 20px;
    }
 
