@@ -326,6 +326,7 @@
         width: 100%;
         margin: 10px 0px;
         border-radius: 30px;
+        text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6);
     }
     .nav-item {
         position: relative;
@@ -524,6 +525,7 @@
         width: 100%;
         margin: 10px 0px;
         border-radius: 30px;
+        text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6);
     }
     .nav-item {
         position: relative;
