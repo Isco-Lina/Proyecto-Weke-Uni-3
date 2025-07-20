@@ -35,7 +35,7 @@
 
 * {
     box-sizing: border-box !important;
-    transition: ease all 0.5s;
+    transition: ease all 0.2s;
 }
 
 html {
@@ -230,7 +230,7 @@ button {
 }
 
 .layout_padding {
-    padding-top: 90px;
+    padding-top: 20px;
     padding-bottom: 0px;
 }
 
@@ -244,10 +244,10 @@ button {
 .header_section {
     width: 100%;
     float: left;
-    background-image: url(../images/weke/inicio/start.png);
+    background-image: url(../images/weke/inicio/start\ 2.jpg);
     height: auto;
     background-size: cover;
-    padding: 0px 0px 20px 0px;
+    padding: 0px 0px 0px 0px;
 }
 
 .bg-light {
@@ -258,7 +258,7 @@ button {
     width: 100%;
     float: left;
     text-align: center;
-    padding: 20px 0px 50px 0px;
+    padding: 20px 0px 5px 0px;
 }
 
 .logo_mobile {
@@ -493,6 +493,7 @@ button {
 
 .services_section_2 {
     width: 100%;
+    height: auto;
     float: left;
     margin-top: 90px;
 }
@@ -559,7 +560,7 @@ button {
 }
 
 .about_img {
-   width: 80%;
+   width: 100%;
    max-width: 500px;
    border-radius: 12px;
    margin: 40px auto 0 auto;
@@ -1368,7 +1369,7 @@ button {
 .footer_section {
     width: 100%;
     float: left;
-    background-image: url(../images/footer-mobile-bg.png);
+    background-image: url(../images/weke/inicio/footer.jpg);
     height: auto;
     padding-top: 250px;
     background-size: 100% 100%;
@@ -1416,12 +1417,13 @@ button {
     width: 100%;
     float: left;
     font-size: 16px;
-    color: #ffffff;
+    font-weight: bold;
+    color: #111111;
     padding-top: 10px
 }
 
 .call_text a {
-    color: #ffffff;
+    color: #111111;
 }
 
 .call_text a:hover {
